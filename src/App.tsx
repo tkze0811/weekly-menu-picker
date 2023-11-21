@@ -1,8 +1,13 @@
 import React from "react";
 import "./App.css";
+import { DINNER_MENUS } from "./consts/dinnerMenus";
+import { LUNCH_MENUS } from "./consts/lunchMenus";
+import { WEEK_DAYS } from "./consts/weekdays";
+import { shuffleArray } from "./utils/shuffleArray";
 
 function App() {
-  const weekdays: string[] = ["月", "火", "水", "木", "金"];
+  const lunchMenus = shuffleArray(LUNCH_MENUS);
+  const dinnerMenus = shuffleArray(DINNER_MENUS);
 
   return (
     <div className="App">
@@ -11,7 +16,7 @@ function App() {
         <thead>
           <tr>
             <th scope="col"></th>
-            {weekdays.map((weekday, index) => {
+            {WEEK_DAYS.map((weekday, index) => {
               return (
                 <th key={index} scope="col">
                   {weekday}
@@ -23,24 +28,23 @@ function App() {
         <tbody>
           <tr>
             <th scope="row">昼ご飯</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            {lunchMenus.map((menu, index) => {
+              if (index <= 4) {
+                return <td key={index}>{menu}</td>;
+              }
+            })}
           </tr>
           <tr>
             <th scope="row">夜ご飯</th>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            {dinnerMenus.map((menu, index) => {
+              if (index <= 4) {
+                return <td key={index}>{menu}</td>;
+              }
+            })}
           </tr>
         </tbody>
       </table>
     </div>
   );
 }
-
 export default App;
