@@ -4,6 +4,7 @@ import { DINNER_MENUS } from "./consts/dinnerMenus";
 import { LUNCH_MENUS } from "./consts/lunchMenus";
 import { WEEK_DAYS } from "./consts/weekdays";
 import { shuffleArray } from "./utils/shuffleArray";
+import FoodList from "./conponents/foodList";
 
 function App() {
   const lunchMenus = shuffleArray(LUNCH_MENUS);
@@ -44,6 +45,8 @@ function App() {
           </tr>
         </tbody>
       </table>
+
+      <FoodList />
     </div>
   );
 }
