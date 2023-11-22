@@ -7,6 +7,9 @@ type Props = {
   name: FoodName;
   count: number;
 };
+const ImageContainerWrapper = styled.div`
+  min-width: 65px;
+`;
 const ImageContainer = styled.div`
   cursor: pointer;
   position: relative;
@@ -28,14 +31,12 @@ function FoodItem(props: Props) {
   const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
 
   return (
-    <div className="food-list">
-      <div>
-        <ImageContainer>
-          <Image src={src} alt={name} />
-          <NumOfFoodsText>×{count}</NumOfFoodsText>
-        </ImageContainer>
-      </div>
-    </div>
+    <ImageContainerWrapper className="food-list">
+      <ImageContainer>
+        <Image src={src} alt={name} />
+        <NumOfFoodsText>×{count}</NumOfFoodsText>
+      </ImageContainer>
+    </ImageContainerWrapper>
   );
 }
 export default FoodItem;
