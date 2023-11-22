@@ -5,7 +5,8 @@ function FoodList() {
   return (
     <div className="food-list">
       <div>
-        <FoodItem imageSrc="/egg.png" imageName="卵" count={20} />
+        <FoodItem name="卵" count={20} />
+        <FoodItem name="牛乳" count={10} />
       </div>
     </div>
   );

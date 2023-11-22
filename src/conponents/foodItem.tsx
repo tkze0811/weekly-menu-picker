@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { FoodName } from "../types/food";
+import { FOOD_LIST } from "../consts/foods";
 
 type Props = {
-  imageName: string;
-  imageSrc: string;
+  name: FoodName;
   count: number;
 };
 const ImageContainer = styled.div`
@@ -23,12 +24,14 @@ const NumOfFoodsText = styled.p`
 `;
 
 function FoodItem(props: Props) {
-  const { imageName, imageSrc, count } = props;
+  const { name, count } = props;
+  const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
+
   return (
     <div className="food-list">
       <div>
         <ImageContainer>
-          <Image src={imageSrc} alt={imageName} />
+          <Image src={src} alt={name} />
           <NumOfFoodsText>×{count}</NumOfFoodsText>
         </ImageContainer>
       </div>
