@@ -10,7 +10,7 @@ const FoodListContainer = styled.div`
   width: 60vw;
 `;
 
-function FoodList() {
+const FoodList = () => {
   return (
     <FoodListContainer>
       <FoodItem name="卵" count={20} />
@@ -33,5 +33,5 @@ function FoodList() {
       <FoodItem name="納豆" count={10} />
     </FoodListContainer>
   );
-}
+};
 export default FoodList;

@@ -4,7 +4,7 @@ import { LUNCH_MENUS } from "../consts/lunchMenus";
 import { WEEK_DAYS } from "../consts/weekdays";
 import { shuffleArray } from "../utils/shuffleArray";
 
-function WeeklyMenuTable() {
+const WeeklyMenuTable = () => {
   const lunchMenus = shuffleArray(LUNCH_MENUS);
   const dinnerMenus = shuffleArray(DINNER_MENUS);
 
@@ -42,5 +42,5 @@ function WeeklyMenuTable() {
       </tbody>
     </table>
   );
-}
+};
 export default WeeklyMenuTable;
