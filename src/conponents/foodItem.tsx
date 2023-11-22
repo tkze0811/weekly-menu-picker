@@ -26,7 +26,7 @@ const NumOfFoodsText = styled.p`
   background-color: white;
 `;
 
-const FoodItem = (props: Props) => {
+export const FoodItem = (props: Props) => {
   const { name, count } = props;
   const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
 
@@ -39,4 +39,3 @@ const FoodItem = (props: Props) => {
     </ImageContainerWrapper>
   );
 };
-export default FoodItem;

@@ -1,5 +1,5 @@
 import React from "react";
-import FoodItem from "./foodItem";
+import { FoodItem } from "./foodItem";
 import styled from "styled-components";
 
 const FoodListContainer = styled.div`
@@ -10,7 +10,7 @@ const FoodListContainer = styled.div`
   width: 60vw;
 `;
 
-const FoodList = () => {
+export const FoodList = () => {
   return (
     <FoodListContainer>
       <FoodItem name="卵" count={20} />
@@ -34,4 +34,3 @@ const FoodList = () => {
     </FoodListContainer>
   );
 };
-export default FoodList;
