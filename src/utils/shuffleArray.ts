@@ -1,4 +1,4 @@
-export const shuffleArray = (array: string[]): string[] => {
+export const shuffleArray = <T>(array: T[]): T[] => {
   const cloneArray = [...array]; //...は配列を展開してコピーしている
 
   for (let i = cloneArray.length - 1; i >= 0; i--) {

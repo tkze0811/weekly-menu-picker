@@ -27,7 +27,7 @@ export const WeeklyMenuTable = () => {
           <th scope="row">昼ご飯</th>
           {lunchMenus.map((menu, index) => {
             if (index <= 4) {
-              return <td key={index}>{menu}</td>;
+              return <td key={index}>{menu.name}</td>;
             }
           })}
         </tr>
@@ -35,7 +35,7 @@ export const WeeklyMenuTable = () => {
           <th scope="row">夜ご飯</th>
           {dinnerMenus.map((menu, index) => {
             if (index <= 4) {
-              return <td key={index}>{menu}</td>;
+              return <td key={index}>{menu.name}</td>;
             }
           })}
         </tr>
