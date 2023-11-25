@@ -17,20 +17,22 @@ export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
       <>
         <Overlay />
         <Dialog ref={ref}>
-          <ImageContainerWrapper>
-            <ImageContainer>
-              <Image src={src} alt={name} />
-              <NumOfFoodsText>×{count}</NumOfFoodsText>
-            </ImageContainer>
-          </ImageContainerWrapper>
-          <CounterContainer>
-            <CountButton>-</CountButton>
-            <CountButton>+</CountButton>
-          </CounterContainer>
-          <ActionButtonContainer>
-            <ActionButton>キャンセル</ActionButton>
-            <ActionButton>OK</ActionButton>
-          </ActionButtonContainer>
+          <DialogContainer>
+            <ImageContainerWrapper>
+              <ImageContainer>
+                <Image src={src} alt={name} />
+                <NumOfFoodsText>×{count}</NumOfFoodsText>
+              </ImageContainer>
+            </ImageContainerWrapper>
+            <CounterContainer>
+              <CountButton>-</CountButton>
+              <CountButton>+</CountButton>
+            </CounterContainer>
+            <ActionButtonContainer>
+              <ActionButton>キャンセル</ActionButton>
+              <ActionButton>OK</ActionButton>
+            </ActionButtonContainer>
+          </DialogContainer>
         </Dialog>
       </>
     );
@@ -48,9 +50,6 @@ const Overlay = styled.div`
 `;
 const Dialog = styled.dialog`
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
   position: absolute;
   top: 0;
   right: 0;
@@ -61,6 +60,13 @@ const Dialog = styled.dialog`
   height: 200px;
   background-color: white;
   border-radius: 10px;
+`;
+const DialogContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
   text-align: center;
 `;
 const ImageContainerWrapper = styled.div`
