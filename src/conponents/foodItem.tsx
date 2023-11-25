@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FoodName } from "../types/food";
 import { FOOD_LIST } from "../consts/foods";
+import { FoodCounterDialog } from "./foodCounterDialog";
 
 type Props = {
   name: FoodName;
@@ -10,7 +11,7 @@ type Props = {
 const ImageContainerWrapper = styled.div`
   min-width: 65px;
 `;
-const ImageContainer = styled.div`
+export const ImageContainer = styled.div`
   cursor: pointer;
   position: relative;
   width: 50px;
@@ -31,11 +32,14 @@ export const FoodItem = (props: Props) => {
   const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
 
   return (
-    <ImageContainerWrapper className="food-list">
-      <ImageContainer>
-        <Image src={src} alt={name} />
-        <NumOfFoodsText>×{count}</NumOfFoodsText>
-      </ImageContainer>
-    </ImageContainerWrapper>
+    <>
+      <ImageContainerWrapper className="food-list">
+        <ImageContainer>
+          <Image src={src} alt={name} />
+          <NumOfFoodsText>×{count}</NumOfFoodsText>
+        </ImageContainer>
+      </ImageContainerWrapper>
+      <FoodCounterDialog />
+    </>
   );
 };
