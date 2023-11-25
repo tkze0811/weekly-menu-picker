@@ -34,3 +34,15 @@ export const setFoodCounts = (name: FoodName, count: number) => {
 
   localStorage.setItem("foodCounts", JSON.stringify(foodCounts));
 };
+
+export const getFoodCount = (name: FoodName): number => {
+  const json = localStorage.getItem("foodCounts");
+  if (json === null) return 0;
+  const foodCounts = JSON.parse(json) as FoodCount[];
+  const target = foodCounts.find((v) => v.name === name);
+  if (!target) {
+    return 0;
+  } else {
+    return target.count;
+  }
+};

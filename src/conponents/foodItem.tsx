@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FoodName } from "../types/food";
 import { FOOD_LIST } from "../consts/foods";
 import { FoodCounterDialog } from "./foodCounterDialog";
+import { getFoodCount } from "../utils/localStorage";
 
 type Props = {
   name: FoodName;
@@ -29,6 +30,7 @@ const NumOfFoodsText = styled.p`
 export const FoodItem = ({ name }: Props) => {
   const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const count = getFoodCount(name);
 
   const openDialog = () => {
     if (dialogRef.current) {
@@ -47,12 +49,12 @@ export const FoodItem = ({ name }: Props) => {
       <ImageContainerWrapper className="food-list" onClick={openDialog}>
         <ImageContainer>
           <Image src={src} alt={name} />
-          <NumOfFoodsText>×10</NumOfFoodsText>
+          <NumOfFoodsText>×{count}</NumOfFoodsText>
         </ImageContainer>
       </ImageContainerWrapper>
       <FoodCounterDialog
         name={name}
-        initialCount={10}
+        initialCount={count}
         ref={dialogRef}
         closeDialog={closeDialog}
       />
