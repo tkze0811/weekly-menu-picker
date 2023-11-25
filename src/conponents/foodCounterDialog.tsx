@@ -1,38 +1,41 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import { FoodName } from "../types/food";
 import { FOOD_LIST } from "../consts/foods";
 
 type Props = {
+  ref: HTMLDialogElement;
   name: FoodName;
   count: number;
 };
 
-export const FoodCounterDialog = ({ name, count }: Props) => {
-  const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
+export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
+  ({ name, count }, ref) => {
+    const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
 
-  return (
-    <>
-      <Overlay />
-      <Dialog>
-        <ImageContainerWrapper>
-          <ImageContainer>
-            <Image src={src} alt={name} />
-            <NumOfFoodsText>×{count}</NumOfFoodsText>
-          </ImageContainer>
-        </ImageContainerWrapper>
-        <CounterContainer>
-          <CountButton>-</CountButton>
-          <CountButton>+</CountButton>
-        </CounterContainer>
-        <ActionButtonContainer>
-          <ActionButton>キャンセル</ActionButton>
-          <ActionButton>OK</ActionButton>
-        </ActionButtonContainer>
-      </Dialog>
-    </>
-  );
-};
+    return (
+      <>
+        <Overlay />
+        <Dialog ref={ref}>
+          <ImageContainerWrapper>
+            <ImageContainer>
+              <Image src={src} alt={name} />
+              <NumOfFoodsText>×{count}</NumOfFoodsText>
+            </ImageContainer>
+          </ImageContainerWrapper>
+          <CounterContainer>
+            <CountButton>-</CountButton>
+            <CountButton>+</CountButton>
+          </CounterContainer>
+          <ActionButtonContainer>
+            <ActionButton>キャンセル</ActionButton>
+            <ActionButton>OK</ActionButton>
+          </ActionButtonContainer>
+        </Dialog>
+      </>
+    );
+  }
+);
 
 const Overlay = styled.div`
   z-index: 1;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { FoodName } from "../types/food";
 import { FOOD_LIST } from "../consts/foods";
@@ -30,6 +30,7 @@ const NumOfFoodsText = styled.p`
 export const FoodItem = (props: Props) => {
   const { name, count } = props;
   const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
+  const ref = useRef<HTMLDialogElement>(null);
 
   return (
     <>
@@ -39,7 +40,7 @@ export const FoodItem = (props: Props) => {
           <NumOfFoodsText>×{count}</NumOfFoodsText>
         </ImageContainer>
       </ImageContainerWrapper>
-      <FoodCounterDialog name={name} count={count} />
+      <FoodCounterDialog name={name} count={count} ref={ref} />
     </>
   );
 };
