@@ -6,7 +6,6 @@ import { FoodCounterDialog } from "./foodCounterDialog";
 
 type Props = {
   name: FoodName;
-  count: number;
 };
 const ImageContainerWrapper = styled.div`
   min-width: 65px;
@@ -27,8 +26,7 @@ const NumOfFoodsText = styled.p`
   background-color: white;
 `;
 
-export const FoodItem = (props: Props) => {
-  const { name, count } = props;
+export const FoodItem = ({ name }: Props) => {
   const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -49,12 +47,12 @@ export const FoodItem = (props: Props) => {
       <ImageContainerWrapper className="food-list" onClick={openDialog}>
         <ImageContainer>
           <Image src={src} alt={name} />
-          <NumOfFoodsText>×{count}</NumOfFoodsText>
+          <NumOfFoodsText>×10</NumOfFoodsText>
         </ImageContainer>
       </ImageContainerWrapper>
       <FoodCounterDialog
         name={name}
-        initialCount={count}
+        initialCount={10}
         ref={dialogRef}
         closeDialog={closeDialog}
       />
