@@ -1,11 +1,16 @@
 import React from "react";
 import "./App.css";
 import { WeeklyMenuScreen } from "./screens/weeklyMenuScreen";
+import styled from "styled-components";
+
+const AppContainer = styled.div`
+  height: 100%;
+`;
 
 export const App = () => {
   return (
-    <div className="App">
+    <AppContainer className="App">
       <WeeklyMenuScreen />
-    </div>
+    </AppContainer>
   );
 };
