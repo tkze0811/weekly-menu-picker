@@ -7,15 +7,16 @@ type Props = {
   ref: HTMLDialogElement;
   name: FoodName;
   count: number;
+  closeDialog: () => void;
 };
 
 export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
-  ({ name, count }, ref) => {
+  ({ name, count, closeDialog }, ref) => {
     const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
 
     return (
-      <Dialog ref={ref}>
-        <DialogContainer>
+      <Dialog ref={ref} onClick={closeDialog}>
+        <DialogContainer onClick={(e) => e.stopPropagation()}>
           <ImageContainerWrapper>
             <ImageContainer>
               <Image src={src} alt={name} />
@@ -27,8 +28,8 @@ export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
             <CountButton>+</CountButton>
           </CounterContainer>
           <ActionButtonContainer>
-            <ActionButton>キャンセル</ActionButton>
-            <ActionButton>OK</ActionButton>
+            <ActionButton onClick={closeDialog}>キャンセル</ActionButton>
+            <ActionButton onClick={closeDialog}>OK</ActionButton>
           </ActionButtonContainer>
         </DialogContainer>
       </Dialog>

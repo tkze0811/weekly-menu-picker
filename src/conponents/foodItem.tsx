@@ -30,17 +30,34 @@ const NumOfFoodsText = styled.p`
 export const FoodItem = (props: Props) => {
   const { name, count } = props;
   const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
-  const ref = useRef<HTMLDialogElement>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  const openDialog = () => {
+    if (dialogRef.current) {
+      dialogRef.current.showModal();
+    }
+  };
+
+  const closeDialog = () => {
+    if (dialogRef.current) {
+      dialogRef.current.close();
+    }
+  };
 
   return (
     <>
-      <ImageContainerWrapper className="food-list">
+      <ImageContainerWrapper className="food-list" onClick={openDialog}>
         <ImageContainer>
           <Image src={src} alt={name} />
           <NumOfFoodsText>×{count}</NumOfFoodsText>
         </ImageContainer>
       </ImageContainerWrapper>
-      <FoodCounterDialog name={name} count={count} ref={ref} />
+      <FoodCounterDialog
+        name={name}
+        count={count}
+        ref={dialogRef}
+        closeDialog={closeDialog}
+      />
     </>
   );
 };
