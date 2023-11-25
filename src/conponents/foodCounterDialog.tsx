@@ -9,10 +9,11 @@ type Props = {
   name: FoodName;
   initialCount: number;
   closeDialog: () => void;
+  updateFoodItemCounter: (count: number) => void;
 };
 
 export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
-  ({ name, initialCount, closeDialog }, ref) => {
+  ({ name, initialCount, closeDialog, updateFoodItemCounter }, ref) => {
     const [count, setCount] = useState(initialCount);
     const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
 
@@ -20,6 +21,7 @@ export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
     const onClickMinusButton = () => setCount(count - 1);
     const onClickSaveButton = () => {
       setFoodCounts(name, count);
+      updateFoodItemCounter(count);
       closeDialog();
     };
 

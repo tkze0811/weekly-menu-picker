@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { FoodName } from "../types/food";
 import { FOOD_LIST } from "../consts/foods";
@@ -30,7 +30,7 @@ const NumOfFoodsText = styled.p`
 export const FoodItem = ({ name }: Props) => {
   const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const count = getFoodCount(name);
+  const [count, setCount] = useState<number>(getFoodCount(name));
 
   const openDialog = () => {
     if (dialogRef.current) {
@@ -57,6 +57,7 @@ export const FoodItem = ({ name }: Props) => {
         initialCount={count}
         ref={dialogRef}
         closeDialog={closeDialog}
+        updateFoodItemCounter={setCount}
       />
     </>
   );
