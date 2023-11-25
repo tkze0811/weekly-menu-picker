@@ -54,7 +54,7 @@ export const FoodItem = (props: Props) => {
       </ImageContainerWrapper>
       <FoodCounterDialog
         name={name}
-        count={count}
+        initialCount={count}
         ref={dialogRef}
         closeDialog={closeDialog}
       />

@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
 import styled from "styled-components";
 import { FoodName } from "../types/food";
 import { FOOD_LIST } from "../consts/foods";
@@ -6,13 +6,17 @@ import { FOOD_LIST } from "../consts/foods";
 type Props = {
   ref: HTMLDialogElement;
   name: FoodName;
-  count: number;
+  initialCount: number;
   closeDialog: () => void;
 };
 
 export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
-  ({ name, count, closeDialog }, ref) => {
+  ({ name, initialCount, closeDialog }, ref) => {
+    const [count, setCount] = useState(initialCount);
     const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
+
+    const onClickPlusButton = () => setCount(count + 1);
+    const onClickMinusButton = () => setCount(count - 1);
 
     return (
       <Dialog ref={ref} onClick={closeDialog}>
@@ -24,8 +28,8 @@ export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
             </ImageContainer>
           </ImageContainerWrapper>
           <CounterContainer>
-            <CountButton>-</CountButton>
-            <CountButton>+</CountButton>
+            <CountButton onClick={onClickMinusButton}>-</CountButton>
+            <CountButton onClick={onClickPlusButton}>+</CountButton>
           </CounterContainer>
           <ActionButtonContainer>
             <ActionButton onClick={closeDialog}>キャンセル</ActionButton>
