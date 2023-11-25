@@ -1,7 +1,8 @@
 import React, { forwardRef, useState } from "react";
 import styled from "styled-components";
-import { FoodName } from "../types/food";
 import { FOOD_LIST } from "../consts/foods";
+import { FoodName } from "../types/food";
+import { setFoodCounts } from "../utils/localStorage";
 
 type Props = {
   ref: HTMLDialogElement;
@@ -17,6 +18,10 @@ export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
 
     const onClickPlusButton = () => setCount(count + 1);
     const onClickMinusButton = () => setCount(count - 1);
+    const onClickSaveButton = () => {
+      setFoodCounts(name, count);
+      closeDialog();
+    };
 
     return (
       <Dialog ref={ref} onClick={closeDialog}>
@@ -33,7 +38,7 @@ export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
           </CounterContainer>
           <ActionButtonContainer>
             <ActionButton onClick={closeDialog}>キャンセル</ActionButton>
-            <ActionButton onClick={closeDialog}>OK</ActionButton>
+            <ActionButton onClick={onClickSaveButton}>OK</ActionButton>
           </ActionButtonContainer>
         </DialogContainer>
       </Dialog>
