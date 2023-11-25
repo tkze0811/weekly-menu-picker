@@ -11,7 +11,7 @@ type Props = {
 const ImageContainerWrapper = styled.div`
   min-width: 65px;
 `;
-export const ImageContainer = styled.div`
+const ImageContainer = styled.div`
   cursor: pointer;
   position: relative;
   width: 50px;
@@ -39,7 +39,7 @@ export const FoodItem = (props: Props) => {
           <NumOfFoodsText>×{count}</NumOfFoodsText>
         </ImageContainer>
       </ImageContainerWrapper>
-      <FoodCounterDialog />
+      <FoodCounterDialog name={name} count={count} />
     </>
   );
 };
