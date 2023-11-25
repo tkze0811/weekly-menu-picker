@@ -14,42 +14,30 @@ export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
     const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
 
     return (
-      <>
-        <Overlay />
-        <Dialog ref={ref}>
-          <DialogContainer>
-            <ImageContainerWrapper>
-              <ImageContainer>
-                <Image src={src} alt={name} />
-                <NumOfFoodsText>×{count}</NumOfFoodsText>
-              </ImageContainer>
-            </ImageContainerWrapper>
-            <CounterContainer>
-              <CountButton>-</CountButton>
-              <CountButton>+</CountButton>
-            </CounterContainer>
-            <ActionButtonContainer>
-              <ActionButton>キャンセル</ActionButton>
-              <ActionButton>OK</ActionButton>
-            </ActionButtonContainer>
-          </DialogContainer>
-        </Dialog>
-      </>
+      <Dialog ref={ref}>
+        <DialogContainer>
+          <ImageContainerWrapper>
+            <ImageContainer>
+              <Image src={src} alt={name} />
+              <NumOfFoodsText>×{count}</NumOfFoodsText>
+            </ImageContainer>
+          </ImageContainerWrapper>
+          <CounterContainer>
+            <CountButton>-</CountButton>
+            <CountButton>+</CountButton>
+          </CounterContainer>
+          <ActionButtonContainer>
+            <ActionButton>キャンセル</ActionButton>
+            <ActionButton>OK</ActionButton>
+          </ActionButtonContainer>
+        </DialogContainer>
+      </Dialog>
     );
   }
 );
 
-const Overlay = styled.div`
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.05);
-`;
 const Dialog = styled.dialog`
-  z-index: 2;
+  z-index: 1;
   position: absolute;
   top: 0;
   right: 0;
