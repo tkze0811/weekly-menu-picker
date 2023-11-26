@@ -1,55 +1,11 @@
-import React from "react";
 import styled from "styled-components";
 import { FoodList } from "../components/foodList";
-import { WeeklyMenuTable } from "../components/weeklyMenuTable";
 import { ShoppingList } from "../components/shoppingList";
-import { DINNER_MENUS } from "../consts/dinnerMenus";
-import { LUNCH_MENUS } from "../consts/lunchMenus";
-import { Ingredient } from "../types/menu";
-import { getFoodCount } from "../utils/localStorage";
-import { shuffleArray } from "../utils/shuffleArray";
+import { WeeklyMenuTable } from "../components/weeklyMenuTable";
+import { useShoppingList } from "../hooks/shoppingList";
 
 export const WeeklyMenuScreen = () => {
-  const lunchMenus = shuffleArray(LUNCH_MENUS).splice(0, 5);
-  const dinnerMenus = shuffleArray(DINNER_MENUS).splice(0, 5);
-  const ingredients: Ingredient[] = [];
-
-  for (const menu of dinnerMenus) {
-    for (const ingredient of menu.ingredients) {
-      const targetIndex = ingredients.findIndex(
-        (v) => v.name === ingredient.name
-      );
-      if (targetIndex === -1) {
-        ingredients.push({ ...ingredient });
-      } else {
-        ingredients[targetIndex].count += ingredient.count;
-      }
-    }
-  }
-  for (const menu of lunchMenus) {
-    for (const ingredient of menu.ingredients) {
-      const targetIndex = ingredients.findIndex(
-        (v) => v.name === ingredient.name
-      );
-      if (targetIndex === -1) {
-        ingredients.push({ ...ingredient });
-      } else {
-        ingredients[targetIndex].count += ingredient.count;
-      }
-    }
-  }
-
-  const shoppingList = ingredients
-    .map((v) => {
-      const currentCount = getFoodCount(v.name);
-      const neededCount = v.count - currentCount;
-      if (neededCount <= 0) {
-        return;
-      } else {
-        return { name: v.name, count: neededCount };
-      }
-    })
-    .filter((v) => v) as Ingredient[];
+  const { shoppingList, lunchMenus, dinnerMenus } = useShoppingList();
 
   return (
     <AllContainer>
