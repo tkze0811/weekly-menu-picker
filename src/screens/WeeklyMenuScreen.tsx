@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { FoodList } from "../conponents/foodList";
-import { WeeklyMenuTable } from "../conponents/weeklyMenuTable";
-import { ShoppingList } from "../conponents/shoppingList";
+import { FoodList } from "../components/foodList";
+import { WeeklyMenuTable } from "../components/weeklyMenuTable";
+import { ShoppingList } from "../components/shoppingList";
 
 const AllContainer = styled.div`
   display: flex;
