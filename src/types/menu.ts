@@ -1,5 +1,7 @@
+import { FoodName } from "./food";
+
 export type Ingredient = {
-  name: string;
+  name: FoodName;
   count: number;
 };
 export type Menu = {

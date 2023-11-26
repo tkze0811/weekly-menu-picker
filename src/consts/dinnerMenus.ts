@@ -1,20 +1,5 @@
 import { Menu } from "../types/menu";
 
-// export const DINNER_MENUS: string[] = [
-//     "ハンバーグ",
-//     "オムライス",
-//     "カレー",
-//     "シチュー",
-//     "唐揚げ",
-//     "鶏のレモンソテー",
-//     "ポトフ",
-//     "ドリア",
-//     "タコライス",
-//     "油淋鶏",
-//     "鶏のトマト煮",
-//     "トンテキ",
-// ]
-
 export const DINNER_MENUS: Menu[] = [
   {
     name: "ハンバーグ",
@@ -70,15 +55,11 @@ export const DINNER_MENUS: Menu[] = [
         count: 3,
       },
       {
-        name: "にんじん",
+        name: "人参",
         count: 1,
       },
       {
         name: "玉ねぎ",
-        count: 1,
-      },
-      {
-        name: "にんじん",
         count: 1,
       },
     ],
@@ -95,7 +76,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 3,
       },
       {
-        name: "にんじん",
+        name: "人参",
         count: 1,
       },
       {
@@ -146,7 +127,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 3,
       },
       {
-        name: "にんじん",
+        name: "人参",
         count: 1,
       },
       {
@@ -227,7 +208,7 @@ export const DINNER_MENUS: Menu[] = [
     name: "トンテキ",
     ingredients: [
       {
-        name: "ロース肉",
+        name: "豚ロース",
         count: 2,
       },
       {
