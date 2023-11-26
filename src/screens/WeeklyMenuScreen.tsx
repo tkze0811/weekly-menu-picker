@@ -17,6 +17,9 @@ export const WeeklyMenuScreen = () => {
           dinnerMenus={dinnerMenus}
         />
         <StyledFoodList />
+        <StyledImgWrapper>
+          <StyledImg src="kago.jpg" />
+        </StyledImgWrapper>
       </MenuContainer>
 
       <ShoppingListWrapper>
@@ -41,6 +44,19 @@ const Title = styled.h1`
 `;
 const StyledWeeklyMenuTable = styled(WeeklyMenuTable)`
   margin-top: 40px;
+  text-align: center;
+`;
+const StyledFoodList = styled(FoodList)`
+  margin-top: 50px;
+  padding-right: 50px;
+`;
+const StyledImgWrapper = styled.div`
+  text-align: right;
+`;
+const StyledImg = styled.img`
+  width: 500px;
+  height: 300px;
+  text-align: right;
 `;
 
 const ShoppingListWrapper = styled.div`
@@ -54,7 +70,4 @@ const StyledShoppingList = styled(ShoppingList)`
   margin: 0 auto;
   border: solid 1px black;
   border-radius: 5px;
-`;
-const StyledFoodList = styled(FoodList)`
-  margin-top: 50px;
 `;
