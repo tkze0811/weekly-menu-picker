@@ -3,14 +3,15 @@ import { FoodList } from "../components/foodList";
 import { ShoppingList } from "../components/shoppingList";
 import { WeeklyMenuTable } from "../components/weeklyMenuTable";
 import { useShoppingList } from "../hooks/shoppingList";
-
+//コンポーネントを宣言
 export const WeeklyMenuScreen = () => {
   const { shoppingList, lunchMenus, dinnerMenus } = useShoppingList();
+  //買うものリストに必要なものを返している
 
   return (
     <AllContainer>
       <MenuContainer>
-        <h1>献立</h1>
+        <Title>献立</Title>
         <WeeklyMenuTable lunchMenus={lunchMenus} dinnerMenus={dinnerMenus} />
         <StyledFoodList />
       </MenuContainer>
@@ -30,6 +31,10 @@ const AllContainer = styled.div`
 const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
+`;
+const Title = styled.h1`
+  // TODO: 後でフォントを調整する
+  font-style: italic;
 `;
 const ShoppingListWrapper = styled.div`
   display: flex;
