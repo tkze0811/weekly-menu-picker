@@ -6,8 +6,8 @@ import { shuffleArray } from "../utils/shuffleArray";
 import styled, { css } from "styled-components";
 
 export const WeeklyMenuTable = () => {
-  const lunchMenus = shuffleArray(LUNCH_MENUS);
-  const dinnerMenus = shuffleArray(DINNER_MENUS);
+  const lunchMenus = shuffleArray(LUNCH_MENUS).splice(0, 5);
+  const dinnerMenus = shuffleArray(DINNER_MENUS).splice(0, 5);
 
   return (
     <table>
@@ -26,19 +26,15 @@ export const WeeklyMenuTable = () => {
       <tbody>
         <tr>
           <Th scope="row">昼ご飯</Th>
-          {lunchMenus.map((menu, index) => {
-            if (index <= 4) {
-              return <Td key={index}>{menu.name}</Td>;
-            }
-          })}
+          {lunchMenus.map((menu, index) => (
+            <Td key={index}>{menu.name}</Td>
+          ))}
         </tr>
         <tr>
           <Th scope="row">夜ご飯</Th>
-          {dinnerMenus.map((menu, index) => {
-            if (index <= 4) {
-              return <Td key={index}>{menu.name}</Td>;
-            }
-          })}
+          {dinnerMenus.map((menu, index) => (
+            <Td key={index}>{menu.name}</Td>
+          ))}
         </tr>
       </tbody>
     </table>
