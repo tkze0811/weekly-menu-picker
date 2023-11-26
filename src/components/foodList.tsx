@@ -2,14 +2,6 @@ import React from "react";
 import { FoodItem } from "./foodItem";
 import styled from "styled-components";
 
-const FoodListContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  gap: 6px;
-  width: 60vw;
-`;
-
 export const FoodList = () => {
   return (
     <FoodListContainer>
@@ -34,3 +26,11 @@ export const FoodList = () => {
     </FoodListContainer>
   );
 };
+
+const FoodListContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 6px;
+  width: 60vw;
+`;

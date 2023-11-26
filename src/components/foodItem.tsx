@@ -8,24 +8,6 @@ import { getFoodCount } from "../utils/localStorage";
 type Props = {
   name: FoodName;
 };
-const ImageContainerWrapper = styled.div`
-  min-width: 65px;
-`;
-const ImageContainer = styled.div`
-  cursor: pointer;
-  position: relative;
-  width: 50px;
-`;
-const Image = styled.img`
-  width: 100%;
-`;
-const NumOfFoodsText = styled.p`
-  position: absolute;
-  right: -15px;
-  bottom: -5px;
-  border: black 1px solid;
-  background-color: white;
-`;
 
 export const FoodItem = ({ name }: Props) => {
   const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
@@ -62,3 +44,22 @@ export const FoodItem = ({ name }: Props) => {
     </>
   );
 };
+
+const ImageContainerWrapper = styled.div`
+  min-width: 65px;
+`;
+const ImageContainer = styled.div`
+  cursor: pointer;
+  position: relative;
+  width: 50px;
+`;
+const Image = styled.img`
+  width: 100%;
+`;
+const NumOfFoodsText = styled.p`
+  position: absolute;
+  right: -15px;
+  bottom: -5px;
+  border: black 1px solid;
+  background-color: white;
+`;

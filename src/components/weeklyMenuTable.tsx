@@ -5,17 +5,6 @@ import { WEEK_DAYS } from "../consts/weekdays";
 import { shuffleArray } from "../utils/shuffleArray";
 import styled, { css } from "styled-components";
 
-const tableCellStyle = css`
-  border: 1px solid rgb(190, 190, 190);
-  padding: 10px;
-`;
-const Th = styled.td`
-  ${tableCellStyle}
-`;
-const Td = styled.td`
-  ${tableCellStyle}
-`;
-
 export const WeeklyMenuTable = () => {
   const lunchMenus = shuffleArray(LUNCH_MENUS);
   const dinnerMenus = shuffleArray(DINNER_MENUS);
@@ -55,3 +44,14 @@ export const WeeklyMenuTable = () => {
     </table>
   );
 };
+
+const tableCellStyle = css`
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px;
+`;
+const Th = styled.td`
+  ${tableCellStyle}
+`;
+const Td = styled.td`
+  ${tableCellStyle}
+`;

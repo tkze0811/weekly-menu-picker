@@ -5,6 +5,19 @@ type Props = {
   className?: string;
 };
 
+export const ShoppingList = ({ className }: Props) => {
+  return (
+    <ShoppingListContainer className={className}>
+      <h3>買うものリスト</h3>
+      <List>
+        <li>じゃがいも ×3</li>
+        <li>バター ×3</li>
+        <li>トマト ×3</li>
+      </List>
+    </ShoppingListContainer>
+  );
+};
+
 const ShoppingListContainer = styled.div`
   padding: 20px 0;
   width: 300px;
@@ -19,16 +32,3 @@ const List = styled.ul`
   text-align: left;
   box-sizing: border-box;
 `;
-
-export const ShoppingList = ({ className }: Props) => {
-  return (
-    <ShoppingListContainer className={className}>
-      <h3>買うものリスト</h3>
-      <List>
-        <li>じゃがいも ×3</li>
-        <li>バター ×3</li>
-        <li>トマト ×3</li>
-      </List>
-    </ShoppingListContainer>
-  );
-};

@@ -4,6 +4,22 @@ import { FoodList } from "../components/foodList";
 import { WeeklyMenuTable } from "../components/weeklyMenuTable";
 import { ShoppingList } from "../components/shoppingList";
 
+export const WeeklyMenuScreen = () => {
+  return (
+    <AllContainer>
+      <MenuContainer>
+        <h1>献立</h1>
+        <WeeklyMenuTable />
+        <FoodList />
+      </MenuContainer>
+
+      <ShoppingListWrapper>
+        <StyledShoppingList />
+      </ShoppingListWrapper>
+    </AllContainer>
+  );
+};
+
 const AllContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -25,19 +41,3 @@ const StyledShoppingList = styled(ShoppingList)`
   border: solid 1px black;
   border-radius: 5px;
 `;
-
-export const WeeklyMenuScreen = () => {
-  return (
-    <AllContainer>
-      <MenuContainer>
-        <h1>献立</h1>
-        <WeeklyMenuTable />
-        <FoodList />
-      </MenuContainer>
-
-      <ShoppingListWrapper>
-        <StyledShoppingList />
-      </ShoppingListWrapper>
-    </AllContainer>
-  );
-};
