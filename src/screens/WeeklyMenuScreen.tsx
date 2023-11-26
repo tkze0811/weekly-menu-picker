@@ -3,13 +3,19 @@ import styled from "styled-components";
 import { FoodList } from "../components/foodList";
 import { WeeklyMenuTable } from "../components/weeklyMenuTable";
 import { ShoppingList } from "../components/shoppingList";
+import { DINNER_MENUS } from "../consts/dinnerMenus";
+import { LUNCH_MENUS } from "../consts/lunchMenus";
+import { shuffleArray } from "../utils/shuffleArray";
 
 export const WeeklyMenuScreen = () => {
+  const lunchMenus = shuffleArray(LUNCH_MENUS).splice(0, 5);
+  const dinnerMenus = shuffleArray(DINNER_MENUS).splice(0, 5);
+
   return (
     <AllContainer>
       <MenuContainer>
         <h1>献立</h1>
-        <WeeklyMenuTable />
+        <WeeklyMenuTable lunchMenus={lunchMenus} dinnerMenus={dinnerMenus} />
         <StyledFoodList />
       </MenuContainer>
 

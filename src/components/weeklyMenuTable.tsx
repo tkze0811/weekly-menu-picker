@@ -1,14 +1,13 @@
-import React from "react";
-import { DINNER_MENUS } from "../consts/dinnerMenus";
-import { LUNCH_MENUS } from "../consts/lunchMenus";
-import { WEEK_DAYS } from "../consts/weekdays";
-import { shuffleArray } from "../utils/shuffleArray";
 import styled, { css } from "styled-components";
+import { WEEK_DAYS } from "../consts/weekdays";
+import { Menu } from "../types/menu";
 
-export const WeeklyMenuTable = () => {
-  const lunchMenus = shuffleArray(LUNCH_MENUS).splice(0, 5);
-  const dinnerMenus = shuffleArray(DINNER_MENUS).splice(0, 5);
+type Props = {
+  lunchMenus: Menu[];
+  dinnerMenus: Menu[];
+};
 
+export const WeeklyMenuTable = ({ lunchMenus, dinnerMenus }: Props) => {
   return (
     <table>
       <thead>
