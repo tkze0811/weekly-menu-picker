@@ -1,18 +1,22 @@
 import React from "react";
 import styled from "styled-components";
+import { Ingredient } from "../types/menu";
 
 type Props = {
   className?: string;
+  shoppingList: Ingredient[];
 };
 
-export const ShoppingList = ({ className }: Props) => {
+export const ShoppingList = ({ className, shoppingList }: Props) => {
   return (
     <ShoppingListContainer className={className}>
       <h3>買うものリスト</h3>
       <List>
-        <li>じゃがいも ×3</li>
-        <li>バター ×3</li>
-        <li>トマト ×3</li>
+        {shoppingList.map((item, index) => (
+          <li key={index}>
+            {item.name} ×{item.count}
+          </li>
+        ))}
       </List>
     </ShoppingListContainer>
   );
