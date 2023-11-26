@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { WeeklyMenuScreen } from "./screens/weeklyMenuScreen";
 import styled from "styled-components";
 

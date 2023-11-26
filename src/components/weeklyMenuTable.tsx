@@ -3,6 +3,18 @@ import { DINNER_MENUS } from "../consts/dinnerMenus";
 import { LUNCH_MENUS } from "../consts/lunchMenus";
 import { WEEK_DAYS } from "../consts/weekdays";
 import { shuffleArray } from "../utils/shuffleArray";
+import styled, { css } from "styled-components";
+
+const tableCellStyle = css`
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px;
+`;
+const Th = styled.td`
+  ${tableCellStyle}
+`;
+const Td = styled.td`
+  ${tableCellStyle}
+`;
 
 export const WeeklyMenuTable = () => {
   const lunchMenus = shuffleArray(LUNCH_MENUS);
@@ -12,30 +24,30 @@ export const WeeklyMenuTable = () => {
     <table>
       <thead>
         <tr>
-          <th scope="col"></th>
+          <Th scope="col"></Th>
           {WEEK_DAYS.map((weekday, index) => {
             return (
-              <th key={index} scope="col">
+              <Th key={index} scope="col">
                 {weekday}
-              </th>
+              </Th>
             );
           })}
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">昼ご飯</th>
+          <Th scope="row">昼ご飯</Th>
           {lunchMenus.map((menu, index) => {
             if (index <= 4) {
-              return <td key={index}>{menu.name}</td>;
+              return <Td key={index}>{menu.name}</Td>;
             }
           })}
         </tr>
         <tr>
-          <th scope="row">夜ご飯</th>
+          <Th scope="row">夜ご飯</Th>
           {dinnerMenus.map((menu, index) => {
             if (index <= 4) {
-              return <td key={index}>{menu.name}</td>;
+              return <Td key={index}>{menu.name}</Td>;
             }
           })}
         </tr>
