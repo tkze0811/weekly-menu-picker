@@ -5,11 +5,16 @@ import { Menu } from "../types/menu";
 type Props = {
   lunchMenus: Menu[];
   dinnerMenus: Menu[];
+  className?: string;
 };
 
-export const WeeklyMenuTable = ({ lunchMenus, dinnerMenus }: Props) => {
+export const WeeklyMenuTable = ({
+  lunchMenus,
+  dinnerMenus,
+  className,
+}: Props) => {
   return (
-    <table>
+    <table className={className}>
       <thead>
         <tr>
           <Th scope="col"></Th>

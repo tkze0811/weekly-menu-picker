@@ -11,8 +11,11 @@ export const WeeklyMenuScreen = () => {
   return (
     <AllContainer>
       <MenuContainer>
-        <Title>献立</Title>
-        <WeeklyMenuTable lunchMenus={lunchMenus} dinnerMenus={dinnerMenus} />
+        <Title>今週の献立表</Title>
+        <StyledWeeklyMenuTable
+          lunchMenus={lunchMenus}
+          dinnerMenus={dinnerMenus}
+        />
         <StyledFoodList />
       </MenuContainer>
 
@@ -31,11 +34,15 @@ const AllContainer = styled.div`
 const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 30px;
 `;
 const Title = styled.h1`
-  // TODO: 後でフォントを調整する
-  font-style: italic;
+  font-size: 32px;
 `;
+const StyledWeeklyMenuTable = styled(WeeklyMenuTable)`
+  margin-top: 40px;
+`;
+
 const ShoppingListWrapper = styled.div`
   display: flex;
   justify-content: center;
