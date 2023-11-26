@@ -10,7 +10,7 @@ export const WeeklyMenuScreen = () => {
       <MenuContainer>
         <h1>献立</h1>
         <WeeklyMenuTable />
-        <FoodList />
+        <StyledFoodList />
       </MenuContainer>
 
       <ShoppingListWrapper>
@@ -40,4 +40,7 @@ const StyledShoppingList = styled(ShoppingList)`
   margin: 0 auto;
   border: solid 1px black;
   border-radius: 5px;
+`;
+const StyledFoodList = styled(FoodList)`
+  margin-top: 50px;
 `;

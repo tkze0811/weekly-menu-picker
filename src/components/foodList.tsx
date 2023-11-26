@@ -2,9 +2,11 @@ import React from "react";
 import { FoodItem } from "./foodItem";
 import styled from "styled-components";
 
-export const FoodList = () => {
+type Props = { className?: string };
+
+export const FoodList = ({ className }: Props) => {
   return (
-    <FoodListContainer>
+    <FoodListContainer className={className}>
       <FoodItem name="卵" />
       <FoodItem name="牛乳" />
       <FoodItem name="バター" />
