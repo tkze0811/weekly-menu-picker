@@ -3,7 +3,11 @@ import { Ingredient, Menu } from "../types/menu";
 import { DINNER_MENUS } from "../consts/dinnerMenus";
 import { LUNCH_MENUS } from "../consts/lunchMenus";
 import { shuffleArray } from "../utils/shuffleArray";
-import { getFoodCount } from "../utils/localStorage";
+import {
+  getFoodCount,
+  getWeeklyDinnerMenu,
+  getWeeklyLunchMenu,
+} from "../utils/localStorage";
 
 export const useShoppingList = () => {
   const lunchIngredients = shuffleArray(LUNCH_MENUS).splice(0, 5);
@@ -17,8 +21,20 @@ export const useShoppingList = () => {
   );
 
   useEffect(() => {
+    setLunchMenuFromStorage();
+    setDinnerMenuFromStorage();
     updateShoppingList();
   }, []);
+
+  const setLunchMenuFromStorage = () => {
+    const menus = getWeeklyLunchMenu();
+    if (menus.length) setLunchMenus(menus);
+  };
+
+  const setDinnerMenuFromStorage = () => {
+    const menus = getWeeklyDinnerMenu();
+    if (menus.length) setDinnerMenus(menus);
+  };
 
   const updateShoppingList = () => {
     // コンポーネント初期化時に実行される
@@ -60,5 +76,5 @@ export const useShoppingList = () => {
     return ingredients;
   };
 
-  return { shoppingList, setShoppingList, lunchIngredients, dinnerIngredients };
+  return { shoppingList, setShoppingList, lunchMenus, dinnerMenus };
 };

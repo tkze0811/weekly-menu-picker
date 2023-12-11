@@ -7,16 +7,15 @@ import { useShoppingList } from "../hooks/shoppingList";
 //コンポーネントを宣言
 export const WeeklyMenuScreen = () => {
   // 買うものリストに必要なものを返している
-  const { shoppingList, lunchIngredients, dinnerIngredients } =
-    useShoppingList();
+  const { shoppingList, lunchMenus, dinnerMenus } = useShoppingList();
 
   return (
     <AllContainer>
       <MenuContainer>
         <Title>今週の献立表</Title>
         <StyledWeeklyMenuTable
-          lunchIngredients={lunchIngredients}
-          dinnerIngredients={dinnerIngredients}
+          lunchMenus={lunchMenus}
+          dinnerMenus={dinnerMenus}
         />
         <StyledFoodList />
         <StyledImgWrapper>

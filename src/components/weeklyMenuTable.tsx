@@ -1,16 +1,15 @@
 import styled, { css } from "styled-components";
 import { WEEK_DAYS } from "../consts/weekdays";
-import { Menu } from "../types/menu";
 
 type Props = {
-  lunchIngredients: Menu[];
-  dinnerIngredients: Menu[];
+  lunchMenus: string[];
+  dinnerMenus: string[];
   className?: string;
 };
 
 export const WeeklyMenuTable = ({
-  lunchIngredients,
-  dinnerIngredients,
+  lunchMenus,
+  dinnerMenus,
   className,
 }: Props) => {
   return (
@@ -30,14 +29,14 @@ export const WeeklyMenuTable = ({
       <tbody>
         <tr>
           <Th scope="row">昼ご飯</Th>
-          {lunchIngredients.map((lunchIngredient, index) => (
-            <Td key={index}>{lunchIngredient.name}</Td>
+          {lunchMenus.map((menu, index) => (
+            <Td key={index}>{menu}</Td>
           ))}
         </tr>
         <tr>
           <Th scope="row">夜ご飯</Th>
-          {dinnerIngredients.map((dinnerIngredient, index) => (
-            <Td key={index}>{dinnerIngredient.name}</Td>
+          {dinnerMenus.map((menu, index) => (
+            <Td key={index}>{menu}</Td>
           ))}
         </tr>
       </tbody>
