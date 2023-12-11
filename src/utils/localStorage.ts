@@ -16,6 +16,19 @@ export const getWeeklyDinnerMenu = (): MenuOfTheDay[] => {
   return weeklyDinnerMenu;
 };
 
+export const setWeeklyLunchMenu = (weeklyLunchMenu: MenuOfTheDay[]) => {
+  localStorage.setItem("weeklyLunchMenu", JSON.stringify(weeklyLunchMenu));
+};
+
+export const getWeeklyLunchMenu = (): MenuOfTheDay[] => {
+  const json = localStorage.getItem("weeklyLunchMenu");
+  if (json === null) {
+    return [];
+  }
+  const weeklyLunchMenu = JSON.parse(json) as MenuOfTheDay[];
+  return weeklyLunchMenu;
+};
+
 /**
  * 第一引数で指定した食材の個数を、第二引数で渡す値に書き換える
  *
