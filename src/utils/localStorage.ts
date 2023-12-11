@@ -1,31 +1,30 @@
 import { FoodName } from "../types/food";
 
 type FoodCount = { name: FoodName; count: number };
-type MenuOfTheDay = { name: string; weekday: string };
 
-export const setWeeklyDinnerMenu = (weeklyDinnerMenu: MenuOfTheDay[]) => {
+export const setWeeklyDinnerMenu = (weeklyDinnerMenu: string[]) => {
   localStorage.setItem("weeklyDinnerMenu", JSON.stringify(weeklyDinnerMenu));
 };
 
-export const getWeeklyDinnerMenu = (): MenuOfTheDay[] => {
+export const getWeeklyDinnerMenu = (): string[] => {
   const json = localStorage.getItem("weeklyDinnerMenu");
   if (json === null) {
     return [];
   }
-  const weeklyDinnerMenu = JSON.parse(json) as MenuOfTheDay[];
+  const weeklyDinnerMenu = JSON.parse(json) as string[];
   return weeklyDinnerMenu;
 };
 
-export const setWeeklyLunchMenu = (weeklyLunchMenu: MenuOfTheDay[]) => {
+export const setWeeklyLunchMenu = (weeklyLunchMenu: string[]) => {
   localStorage.setItem("weeklyLunchMenu", JSON.stringify(weeklyLunchMenu));
 };
 
-export const getWeeklyLunchMenu = (): MenuOfTheDay[] => {
+export const getWeeklyLunchMenu = (): string[] => {
   const json = localStorage.getItem("weeklyLunchMenu");
   if (json === null) {
     return [];
   }
-  const weeklyLunchMenu = JSON.parse(json) as MenuOfTheDay[];
+  const weeklyLunchMenu = JSON.parse(json) as string[];
   return weeklyLunchMenu;
 };
 

@@ -3,10 +3,11 @@ import { FoodList } from "../components/foodList";
 import { ShoppingList } from "../components/shoppingList";
 import { WeeklyMenuTable } from "../components/weeklyMenuTable";
 import { useShoppingList } from "../hooks/shoppingList";
+
 //コンポーネントを宣言
 export const WeeklyMenuScreen = () => {
+  // 買うものリストに必要なものを返している
   const { shoppingList, lunchMenus, dinnerMenus } = useShoppingList();
-  //買うものリストに必要なものを返している
 
   return (
     <AllContainer>
