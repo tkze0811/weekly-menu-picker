@@ -7,18 +7,14 @@ import {
   getFoodCount,
   getWeeklyDinnerMenu,
   getWeeklyLunchMenu,
+  setWeeklyDinnerMenu,
+  setWeeklyLunchMenu,
 } from "../utils/localStorage";
 
 export const useShoppingList = () => {
-  const lunchIngredients = shuffleArray(LUNCH_MENUS).splice(0, 5);
-  const dinnerIngredients = shuffleArray(DINNER_MENUS).splice(0, 5);
   const [shoppingList, setShoppingList] = useState<Ingredient[]>([]); // 変更を反映するための布石
-  const [lunchMenus, setLunchMenus] = useState<string[]>(
-    lunchIngredients.map((v) => v.name)
-  );
-  const [dinnerMenus, setDinnerMenus] = useState<string[]>(
-    dinnerIngredients.map((v) => v.name)
-  );
+  const [lunchMenus, setLunchMenus] = useState<string[]>([]);
+  const [dinnerMenus, setDinnerMenus] = useState<string[]>([]);
 
   useEffect(() => {
     setLunchMenuFromStorage();
@@ -36,7 +32,24 @@ export const useShoppingList = () => {
     if (menus.length) setDinnerMenus(menus);
   };
 
+  const shuffleMenusToStorage = () => {
+    const newLunchMenus = getRandomMenusOfWeek(LUNCH_MENUS);
+    const newDinnerMenus = getRandomMenusOfWeek(DINNER_MENUS);
+    setLunchMenus(newLunchMenus);
+    setDinnerMenus(newDinnerMenus);
+    setWeeklyLunchMenu(newLunchMenus);
+    setWeeklyDinnerMenu(newDinnerMenus);
+  };
+
+  const getRandomMenusOfWeek = (menu: Menu[]): string[] => {
+    return shuffleArray(menu)
+      .splice(0, 5)
+      .map((v) => v.name);
+  };
+
   const updateShoppingList = () => {
+    const lunchIngredients = shuffleArray(LUNCH_MENUS).splice(0, 5);
+    const dinnerIngredients = shuffleArray(DINNER_MENUS).splice(0, 5);
     // コンポーネント初期化時に実行される
     const neededIngredients: Ingredient[] = getNeededIngredient([
       ...lunchIngredients,
@@ -76,5 +89,11 @@ export const useShoppingList = () => {
     return ingredients;
   };
 
-  return { shoppingList, setShoppingList, lunchMenus, dinnerMenus };
+  return {
+    shoppingList,
+    setShoppingList,
+    lunchMenus,
+    dinnerMenus,
+    shuffleMenusToStorage,
+  };
 };

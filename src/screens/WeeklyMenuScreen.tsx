@@ -7,7 +7,8 @@ import { useShoppingList } from "../hooks/shoppingList";
 //コンポーネントを宣言
 export const WeeklyMenuScreen = () => {
   // 買うものリストに必要なものを返している
-  const { shoppingList, lunchMenus, dinnerMenus } = useShoppingList();
+  const { shoppingList, lunchMenus, dinnerMenus, shuffleMenusToStorage } =
+    useShoppingList();
 
   return (
     <AllContainer>
@@ -17,6 +18,7 @@ export const WeeklyMenuScreen = () => {
           lunchMenus={lunchMenus}
           dinnerMenus={dinnerMenus}
         />
+        <button onClick={shuffleMenusToStorage}>shuffle</button>
         <StyledFoodList />
         <StyledImgWrapper>
           <StyledImg src="kago.jpg" />
