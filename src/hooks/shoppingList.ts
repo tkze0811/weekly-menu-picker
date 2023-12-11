@@ -17,6 +17,10 @@ export const useShoppingList = () => {
   );
 
   useEffect(() => {
+    updateShoppingList();
+  }, []);
+
+  const updateShoppingList = () => {
     // コンポーネント初期化時に実行される
     const neededIngredients: Ingredient[] = getNeededIngredient([
       ...lunchIngredients,
@@ -36,7 +40,7 @@ export const useShoppingList = () => {
       .filter((v) => v) as Ingredient[];
     // 値を更新
     setShoppingList(shoppingList);
-  }, []);
+  };
 
   // メニューを作るのに必要な食材を返す
   const getNeededIngredient = (menus: Menu[]): Ingredient[] => {
