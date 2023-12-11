@@ -1,6 +1,20 @@
 import { FoodName } from "../types/food";
 
 type FoodCount = { name: FoodName; count: number };
+type MenuOfTheDay = { name: string; weekday: string };
+
+export const setWeeklyDinnerMenu = (weeklyDinnerMenu: MenuOfTheDay[]) => {
+  localStorage.setItem("weeklyDinnerMenu", JSON.stringify(weeklyDinnerMenu));
+};
+
+export const getWeeklyDinnerMenu = (): MenuOfTheDay[] => {
+  const json = localStorage.getItem("weeklyDinnerMenu");
+  if (json === null) {
+    return [];
+  }
+  const weeklyDinnerMenu = JSON.parse(json) as MenuOfTheDay[];
+  return weeklyDinnerMenu;
+};
 
 /**
  * 第一引数で指定した食材の個数を、第二引数で渡す値に書き換える
