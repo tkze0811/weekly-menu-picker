@@ -6,9 +6,15 @@ import { shuffleArray } from "../utils/shuffleArray";
 import { getFoodCount } from "../utils/localStorage";
 
 export const useShoppingList = () => {
-  const [shoppingList, setShoppingList] = useState<Ingredient[]>([]); // 変更を反映するための布石
   const lunchIngredients = shuffleArray(LUNCH_MENUS).splice(0, 5);
   const dinnerIngredients = shuffleArray(DINNER_MENUS).splice(0, 5);
+  const [shoppingList, setShoppingList] = useState<Ingredient[]>([]); // 変更を反映するための布石
+  const [lunchMenus, setLunchMenus] = useState<string[]>(
+    lunchIngredients.map((v) => v.name)
+  );
+  const [dinnerMenus, setDinnerMenus] = useState<string[]>(
+    dinnerIngredients.map((v) => v.name)
+  );
 
   useEffect(() => {
     // コンポーネント初期化時に実行される
