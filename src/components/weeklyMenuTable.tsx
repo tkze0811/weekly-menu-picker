@@ -3,14 +3,14 @@ import { WEEK_DAYS } from "../consts/weekdays";
 import { Menu } from "../types/menu";
 
 type Props = {
-  lunchMenus: Menu[];
-  dinnerMenus: Menu[];
+  lunchIngredients: Menu[];
+  dinnerIngredients: Menu[];
   className?: string;
 };
 
 export const WeeklyMenuTable = ({
-  lunchMenus,
-  dinnerMenus,
+  lunchIngredients,
+  dinnerIngredients,
   className,
 }: Props) => {
   return (
@@ -30,14 +30,14 @@ export const WeeklyMenuTable = ({
       <tbody>
         <tr>
           <Th scope="row">昼ご飯</Th>
-          {lunchMenus.map((menu, index) => (
-            <Td key={index}>{menu.name}</Td>
+          {lunchIngredients.map((lunchIngredient, index) => (
+            <Td key={index}>{lunchIngredient.name}</Td>
           ))}
         </tr>
         <tr>
           <Th scope="row">夜ご飯</Th>
-          {dinnerMenus.map((menu, index) => (
-            <Td key={index}>{menu.name}</Td>
+          {dinnerIngredients.map((dinnerIngredient, index) => (
+            <Td key={index}>{dinnerIngredient.name}</Td>
           ))}
         </tr>
       </tbody>

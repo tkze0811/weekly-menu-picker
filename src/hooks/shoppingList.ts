@@ -7,14 +7,14 @@ import { getFoodCount } from "../utils/localStorage";
 
 export const useShoppingList = () => {
   const [shoppingList, setShoppingList] = useState<Ingredient[]>([]); // 変更を反映するための布石
-  const lunchMenus = shuffleArray(LUNCH_MENUS).splice(0, 5);
-  const dinnerMenus = shuffleArray(DINNER_MENUS).splice(0, 5);
+  const lunchIngredients = shuffleArray(LUNCH_MENUS).splice(0, 5);
+  const dinnerIngredients = shuffleArray(DINNER_MENUS).splice(0, 5);
 
   useEffect(() => {
     // コンポーネント初期化時に実行される
     const neededIngredients: Ingredient[] = getNeededIngredient([
-      ...lunchMenus,
-      ...dinnerMenus, //スプレッド演算子で昼夜まとめた配列にした
+      ...lunchIngredients,
+      ...dinnerIngredients, //スプレッド演算子で昼夜まとめた配列にした
     ]);
     //ショッピングリストに足りない食材を計算して返す
     const shoppingList = neededIngredients
@@ -50,5 +50,5 @@ export const useShoppingList = () => {
     return ingredients;
   };
 
-  return { shoppingList, setShoppingList, lunchMenus, dinnerMenus };
+  return { shoppingList, setShoppingList, lunchIngredients, dinnerIngredients };
 };
