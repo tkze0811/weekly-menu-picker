@@ -17,39 +17,66 @@ export const useShoppingList = () => {
   const [dinnerMenus, setDinnerMenus] = useState<string[]>([]);
 
   useEffect(() => {
-    setLunchMenuFromStorage();
-    setDinnerMenuFromStorage();
-    updateShoppingList();
+    const lunchNames = getWeeklyLunchMenu();
+    const dinnerNames = getWeeklyDinnerMenu();
+    setLunchMenuFromStorage(lunchNames);
+    setDinnerMenuFromStorage(dinnerNames);
+    updateShoppingList(
+      getMenuIngredients(lunchNames),
+      getMenuIngredients(dinnerNames)
+    );
   }, []);
 
-  const setLunchMenuFromStorage = () => {
-    const menus = getWeeklyLunchMenu();
-    if (menus.length) setLunchMenus(menus);
+  const setLunchMenuFromStorage = (menuNames: string[]) => {
+    if (menuNames.length) {
+      setLunchMenus(menuNames);
+    } else {
+      const randomMenus = getRandomMenusIngredients(LUNCH_MENUS).map(
+        (v) => v.name
+      );
+      setLunchMenus(randomMenus);
+    }
   };
 
-  const setDinnerMenuFromStorage = () => {
-    const menus = getWeeklyDinnerMenu();
-    if (menus.length) setDinnerMenus(menus);
+  const setDinnerMenuFromStorage = (menuNames: string[]) => {
+    if (menuNames.length) {
+      setDinnerMenus(menuNames);
+    } else {
+      const randomMenus = getRandomMenusIngredients(DINNER_MENUS).map(
+        (v) => v.name
+      );
+      setDinnerMenus(randomMenus);
+    }
   };
 
   const shuffleMenusToStorage = () => {
-    const newLunchMenus = getRandomMenusOfWeek(LUNCH_MENUS);
-    const newDinnerMenus = getRandomMenusOfWeek(DINNER_MENUS);
+    const newLunchIngredients = getRandomMenusIngredients(LUNCH_MENUS);
+    const newDinnerIngredients = getRandomMenusIngredients(DINNER_MENUS);
+    const newLunchMenus = newLunchIngredients.map((v) => v.name);
+    const newDinnerMenus = newDinnerIngredients.map((v) => v.name);
     setLunchMenus(newLunchMenus);
     setDinnerMenus(newDinnerMenus);
     setWeeklyLunchMenu(newLunchMenus);
     setWeeklyDinnerMenu(newDinnerMenus);
+    updateShoppingList(newLunchIngredients, newDinnerIngredients);
   };
 
-  const getRandomMenusOfWeek = (menu: Menu[]): string[] => {
-    return shuffleArray(menu)
-      .splice(0, 5)
-      .map((v) => v.name);
+  const getRandomMenusIngredients = (menu: Menu[]): Menu[] => {
+    return shuffleArray(menu).splice(0, 5);
   };
 
-  const updateShoppingList = () => {
-    const lunchIngredients = shuffleArray(LUNCH_MENUS).splice(0, 5);
-    const dinnerIngredients = shuffleArray(DINNER_MENUS).splice(0, 5);
+  const getMenuIngredients = (dishes: string[]): Menu[] => {
+    const menus = [...LUNCH_MENUS, ...DINNER_MENUS];
+    return dishes.map((name) => ({
+      name,
+      ingredients: menus.find((v) => v.name === name)?.ingredients ?? [],
+    }));
+  };
+
+  const updateShoppingList = (
+    lunchIngredients: Menu[],
+    dinnerIngredients: Menu[]
+  ) => {
     // コンポーネント初期化時に実行される
     const neededIngredients: Ingredient[] = getNeededIngredient([
       ...lunchIngredients,
