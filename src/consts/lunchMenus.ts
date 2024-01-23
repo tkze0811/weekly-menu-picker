@@ -29,7 +29,7 @@ export const LUNCH_MENUS: Menu[] = [
     ],
   },
   {
-    name: "TKG",
+    name: "卵かけご飯",
     ingredients: [
       {
         name: "卵",
@@ -42,6 +42,10 @@ export const LUNCH_MENUS: Menu[] = [
     ingredients: [
       {
         name: "うどん",
+        count: 2,
+      },
+      {
+        name: "卵",
         count: 2,
       },
     ],

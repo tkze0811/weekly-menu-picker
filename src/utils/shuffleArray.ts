@@ -1,4 +1,5 @@
 export const shuffleArray = <T>(array: T[]): T[] => {
+  //ジェネリック関数
   const cloneArray = [...array]; //...は配列を展開してコピーしている
 
   for (let i = cloneArray.length - 1; i >= 0; i--) {

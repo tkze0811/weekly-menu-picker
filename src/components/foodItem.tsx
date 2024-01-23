@@ -51,15 +51,32 @@ const ImageContainerWrapper = styled.div`
 const ImageContainer = styled.div`
   cursor: pointer;
   position: relative;
-  width: 50px;
+  width: 70px;
+  height: 70px;
+  background-color: #fcf5f5;
+  border-radius: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const Image = styled.img`
-  width: 100%;
+  width: 70%;
 `;
 const NumOfFoodsText = styled.p`
   position: absolute;
   right: -15px;
   bottom: -5px;
-  border: black 1px solid;
+  height: 25px;
+  width: 35px;
+  text-align: center;
+  color: #8f5e5e;
+  font-weight: 500;
+  border: #c4c1c1 1px solid;
   background-color: white;
+  border-radius: 12px;
+  box-shadow: 3px 3px 6px rgb(0 0 0 / 12%);
+  &:hover {
+    box-shadow: none;
+    transform: translate(1px, 1px);
+  }
 `;

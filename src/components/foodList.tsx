@@ -33,6 +33,6 @@ const FoodListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
-  gap: 6px;
+  gap: 15px;
   width: 60vw;
 `;

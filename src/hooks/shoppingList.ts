@@ -12,7 +12,7 @@ import {
 } from "../utils/localStorage";
 
 export const useShoppingList = () => {
-  const [shoppingList, setShoppingList] = useState<Ingredient[]>([]); // 変更を反映するための布石
+  const [shoppingList, setShoppingList] = useState<Ingredient[]>([]);
   const [lunchMenus, setLunchMenus] = useState<string[]>([]);
   const [dinnerMenus, setDinnerMenus] = useState<string[]>([]);
 

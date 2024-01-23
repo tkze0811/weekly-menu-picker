@@ -6,11 +6,10 @@ type Props = {
   className?: string;
   shoppingList: Ingredient[];
 };
-
 export const ShoppingList = ({ className, shoppingList }: Props) => {
   return (
     <ShoppingListContainer className={className}>
-      <Title>買うものリスト</Title>
+      <Title>Shopping List</Title>
       <List>
         {shoppingList.map((item, index) => (
           <Item key={index}>
@@ -24,13 +23,30 @@ export const ShoppingList = ({ className, shoppingList }: Props) => {
 
 const ShoppingListContainer = styled.div`
   padding: 20px 0;
-  width: 300px;
-  height: 500px;
+  width: 350px;
+  height: 600px;
   text-align: center;
-  background-color: #f4ffff;
+  box-shadow: 0 0px 8px #fff, 4px 4px 8px rgb(0 0 0 / 24%);
+
+  margin: 2em auto;
+  padding: 2em; /*内側余白*/
+  background-color: #f7f1f1; /*背景色*/
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "";
+    right: 0px;
+    top: 0px;
+    border-width: 0 30px 30px 0;
+    border-style: solid;
+    border-color: #ccc #f8edd1 #ccc;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+  }
 `;
 const Title = styled.h3`
   font-size: 24px;
+  color: #992f2f;
+  letter-spacing: 2px;
 `;
 const List = styled.ul`
   list-style: none;
@@ -40,9 +56,9 @@ const List = styled.ul`
   width: 100%;
   text-align: left;
   box-sizing: border-box;
+  letter-spacing: 1px;
 `;
 const Item = styled.li`
   margin-bottom: 10px;
   padding-left: 25px;
-  background: url("toriniku.png") left 0px top 10px no-repeat;
 `;

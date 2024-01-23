@@ -12,4 +12,5 @@ export const App = () => {
 
 const AppContainer = styled.div`
   height: 100%;
+  background-color: #f8edd1;
 `;

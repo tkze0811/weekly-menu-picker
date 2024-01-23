@@ -1,1 +1,1 @@
-export const WEEK_DAYS: string[] = ["月", "火", "水", "木", "金"];
+export const WEEK_DAYS: string[] = ["Mon", "Tue", "Wed", "Thu", "Fri"];

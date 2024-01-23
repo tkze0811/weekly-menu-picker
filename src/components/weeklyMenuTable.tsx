@@ -28,13 +28,13 @@ export const WeeklyMenuTable = ({
       </thead>
       <tbody>
         <tr>
-          <Th scope="row">昼ご飯</Th>
+          <Th scope="row">Lunch</Th>
           {lunchMenus.map((menu, index) => (
             <Td key={index}>{menu}</Td>
           ))}
         </tr>
         <tr>
-          <Th scope="row">夜ご飯</Th>
+          <Th scope="row">Dinner</Th>
           {dinnerMenus.map((menu, index) => (
             <Td key={index}>{menu}</Td>
           ))}
@@ -45,8 +45,10 @@ export const WeeklyMenuTable = ({
 };
 
 const tableCellStyle = css`
-  border: 1px solid rgb(190, 190, 190);
-  padding: 10px;
+  border: 1px solid #cdad9f;
+  padding: 15px;
+  background-color: #f7f1f1;
+  letter-spacing: 2px;
 `;
 const Th = styled.td`
   ${tableCellStyle}
