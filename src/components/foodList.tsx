@@ -13,13 +13,15 @@ export const FoodList = ({ className }: Props) => {
       <FoodItem name="チーズ" />
       <FoodItem name="油" />
       <FoodItem name="豚肉" />
-      <FoodItem name="鶏肉" />
+      <FoodItem name="鶏もも肉" />
+      <FoodItem name="鶏むね肉" />
       <FoodItem name="ひき肉" />
       <FoodItem name="豚ロース" />
       <FoodItem name="玉ねぎ" />
       <FoodItem name="じゃがいも" />
       <FoodItem name="人参" />
       <FoodItem name="トマト" />
+      <FoodItem name="キャベツ" />
       <FoodItem name="パン" />
       <FoodItem name="パスタ" />
       <FoodItem name="ラーメン" />

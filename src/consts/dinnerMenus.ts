@@ -30,7 +30,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 4,
       },
       {
-        name: "鶏肉",
+        name: "鶏もも肉",
         count: 1,
       },
       {
@@ -68,7 +68,7 @@ export const DINNER_MENUS: Menu[] = [
     name: "シチュー",
     ingredients: [
       {
-        name: "鶏肉",
+        name: "鶏もも肉",
         count: 1,
       },
       {
@@ -93,12 +93,12 @@ export const DINNER_MENUS: Menu[] = [
     name: "唐揚げ",
     ingredients: [
       {
-        name: "鶏肉",
+        name: "鶏もも肉",
         count: 3,
       },
       {
         name: "油",
-        count: 2,
+        count: 3,
       },
     ],
   },
@@ -106,7 +106,7 @@ export const DINNER_MENUS: Menu[] = [
     name: "鶏のレモンソテー",
     ingredients: [
       {
-        name: "鶏肉",
+        name: "鶏もも肉",
         count: 2,
       },
       {
@@ -119,7 +119,7 @@ export const DINNER_MENUS: Menu[] = [
     name: "ポトフ",
     ingredients: [
       {
-        name: "鶏肉",
+        name: "鶏もも肉",
         count: 1,
       },
       {
@@ -134,13 +134,17 @@ export const DINNER_MENUS: Menu[] = [
         name: "玉ねぎ",
         count: 1,
       },
+      {
+        name: "キャベツ",
+        count: 2,
+      },
     ],
   },
   {
     name: "ドリア",
     ingredients: [
       {
-        name: "鶏肉",
+        name: "鶏もも肉",
         count: 1,
       },
       {
@@ -149,7 +153,7 @@ export const DINNER_MENUS: Menu[] = [
       },
       {
         name: "チーズ",
-        count: 1,
+        count: 4,
       },
       {
         name: "牛乳",
@@ -170,7 +174,11 @@ export const DINNER_MENUS: Menu[] = [
       },
       {
         name: "チーズ",
-        count: 1,
+        count: 2,
+      },
+      {
+        name: "キャベツ",
+        count: 2,
       },
     ],
   },
@@ -178,8 +186,8 @@ export const DINNER_MENUS: Menu[] = [
     name: "油淋鶏",
     ingredients: [
       {
-        name: "鶏肉",
-        count: 3,
+        name: "鶏むね肉",
+        count: 2,
       },
       {
         name: "油",
@@ -191,7 +199,7 @@ export const DINNER_MENUS: Menu[] = [
     name: "鶏のトマト煮",
     ingredients: [
       {
-        name: "鶏肉",
+        name: "鶏もも肉",
         count: 2,
       },
       {
@@ -214,6 +222,23 @@ export const DINNER_MENUS: Menu[] = [
       {
         name: "バター",
         count: 2,
+      },
+    ],
+  },
+  {
+    name: "豚ロースのトマト煮",
+    ingredients: [
+      {
+        name: "豚ロース",
+        count: 2,
+      },
+      {
+        name: "バター",
+        count: 1,
+      },
+      {
+        name: "トマト",
+        count: 1,
       },
     ],
   },

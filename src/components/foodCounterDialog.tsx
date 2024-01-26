@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FOOD_LIST } from "../consts/foods";
 import { FoodName } from "../types/food";
 import { setFoodCounts } from "../utils/localStorage";
+import { FOOD_DETAILS } from "../consts/foodDetails";
 
 type Props = {
   ref: HTMLDialogElement;
@@ -16,7 +17,8 @@ export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
   ({ name, initialCount, closeDialog, updateFoodItemCounter }, ref) => {
     const [count, setCount] = useState(initialCount);
     const src = FOOD_LIST.find((food) => food.name === name)?.src ?? "";
-
+    const explanation =
+      FOOD_DETAILS.find((food) => food.name === name)?.explanation ?? "";
     const onClickPlusButton = () => setCount(count + 1);
     const onClickMinusButton = () => setCount(count - 1);
     const onClickSaveButton = () => {
@@ -40,6 +42,7 @@ export const FoodCounterDialog = forwardRef<HTMLDialogElement, Props>(
               </ImageContainer>
             </ImageContainerWrapper>
             <FoodText>{name}</FoodText>
+            <FoodDetailsText>{explanation}</FoodDetailsText>
             <CounterContainer>
               <CountButton onClick={onClickMinusButton}>-</CountButton>
               <CountButton onClick={onClickPlusButton}>+</CountButton>
@@ -145,6 +148,12 @@ const FoodText = styled.div`
   font-weight: bold;
   color: #843f3f;
   font-size: large;
+`;
+const FoodDetailsText = styled.div`
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #843f3f;
+  font-size: 17px;
 `;
 const CounterContainer = styled.div`
   display: flex;

@@ -38,6 +38,7 @@ export const WeeklyMenuScreen = () => {
         <ShoppingListWrapper>
           <StyledShoppingList shoppingList={shoppingList} />
         </ShoppingListWrapper>
+        {/* <StyledWoodImage src="wood_ki.png" /> */}
       </MainContainer>
       <Footer />
     </AllContainer>
@@ -79,7 +80,7 @@ const Title = styled.h1`
   font-size: 32px;
 `;
 const StyledWeeklyMenuTable = styled(WeeklyMenuTable)`
-  margin-top: 50px;
+  margin-top: 35px;
   padding-bottom: 30px;
   text-align: center;
 `;
@@ -138,6 +139,7 @@ const DetailButton = styled.button`
   position: relative;
   margin: 0 0 0 auto;
   letter-spacing: 2px;
+  margin-top: 15px;
   margin-bottom: 15px;
   &::before {
     content: "";
@@ -186,6 +188,11 @@ const ShoppingListWrapper = styled.div`
   width: 100%;
   height: 100%;
 `;
+// const StyledWoodImage = styled.img`
+//   width: 500px;
+//   height: 500px;
+//   margin: 0 0 0 auto;
+// `;
 const StyledShoppingList = styled(ShoppingList)`
   margin: 0 auto;
 `;
