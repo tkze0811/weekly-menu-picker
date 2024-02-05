@@ -12,8 +12,9 @@ export const WeeklyMenuScreen = () => {
   return (
     <AllContainer>
       <Header>
-        <Title>今週の献立表</Title>
-        <StyledLogoImage src="9898.png" />
+        <StyledLeftImage src="star.png" />
+        <Title>WEEKLY MENU</Title>
+        <StyledRightImage src="star.png" />
       </Header>
       <MainContainer>
         <MenuContainer>
@@ -23,22 +24,24 @@ export const WeeklyMenuScreen = () => {
           />
           <ButtonContainer>
             <ShuffleButton onClick={shuffleMenusToStorage}>
-              shuffle
+              Shuffle
             </ShuffleButton>
+            <MenuButton>MENU</MenuButton>
             <HistoryButton>
               <StyledHistoryImage src="history.png" />
             </HistoryButton>
           </ButtonContainer>
-          <StyledLineImage src="cooking_line.png" />
+          <StyledLineImage src="line_vegetable.png" />
           <StyledFoodList />
           <DetailButton>Detail</DetailButton>
           <StyledImage src="nezumi.png" />
-          <StyledEndLineImage src="line.png" />
+          <StyledEndLineImage src="popline.png" />
         </MenuContainer>
         <ShoppingListWrapper>
           <StyledShoppingList shoppingList={shoppingList} />
+          <StyledBalloonImage src="" />
+          <StyledWoodImage src="" />
         </ShoppingListWrapper>
-        {/* <StyledWoodImage src="wood_ki.png" /> */}
       </MainContainer>
       <Footer />
     </AllContainer>
@@ -59,60 +62,85 @@ const MenuContainer = styled.div`
   flex-direction: column;
 `;
 const Header = styled.header`
-  color: #992f2f;
-  letter-spacing: 1px;
+  letter-spacing: 5px;
   display: flex;
   padding-top: 50px;
-  padding-left: 35px;
-  gap: 15px;
+  padding-left: 22px;
   height: 70px;
-  font-size: 18px;
+  gap: 45px;
   background-image: url("bg_header.gif");
   background-repeat: repeat-x;
   align-items: center;
 `;
-const StyledLogoImage = styled.img`
-  height: 35px;
-  display: flex;
-  padding-top: 2px;
+const StyledLeftImage = styled.img`
+  margin-top: 50px;
+  height: 150px;
+  width: 300px;
 `;
 const Title = styled.h1`
-  font-size: 32px;
+  font-size: 45px;
+  font-family: fantasy;
+  color: #992f2f;
+  border-bottom: 4px solid #992f2f;
+  display: inline-block;
+  padding-bottom: 5px;
+`;
+const StyledRightImage = styled.img`
+  margin-top: 50px;
+  height: 150px;
+  width: 300px;
 `;
 const StyledWeeklyMenuTable = styled(WeeklyMenuTable)`
-  margin-top: 35px;
-  padding-bottom: 30px;
+  margin-top: 45px;
+  padding-bottom: 20px;
   text-align: center;
 `;
 const ButtonContainer = styled.div`
+  margin-left: 14px;
   display: flex;
-  gap: 15px;
+  gap: 24px;
+  margin-top: 5px;
 `;
 const ShuffleButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 70px;
   aspect-ratio: 1;
-  color: #222;
-  background-color: #eca65b;
+  font-family: fantasy;
+  background-color: #3c5b98;
+  color: #f7efdc;
+  font-size: 18px;
   border-radius: 50%;
-  box-shadow: 0px 0px 8px #fff, 4px 4px 8px rgb(0 0 0 / 24%);
+  box-shadow: 0px 0px 8px #b1b1b1, 4px 4px 8px rgb(0 0 0 / 24%);
 
   &:hover {
     box-shadow: none;
     transform: translate(3px, 3px);
   }
 `;
+const MenuButton = styled.button`
+  width: 70px;
+  aspect-ratio: 1;
+  font-family: fantasy;
+  background-color: #588f5e;
+  color: #f7efdc;
+  font-size: 20px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8px #b1b1b1, 4px 4px 8px rgb(0 0 0 / 24%);
+
+  &:hover {
+    box-shadow: none;
+    transform: translate(3px, 3px);
+  }
+`;
+
 const HistoryButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 70px;
   aspect-ratio: 1;
-  background-color: #f67b52;
+  background-color: #f59056;
   border-radius: 50%;
-  box-shadow: 0px 0px 8px #fff, 4px 4px 8px rgb(0 0 0 / 24%);
+  box-shadow: 0px 0px 8px #b1b1b1, 4px 4px 8px rgb(0 0 0 / 24%);
 
   &:hover {
     box-shadow: none;
@@ -124,52 +152,33 @@ const StyledHistoryImage = styled.img`
   height: 37px;
 `;
 const StyledLineImage = styled.img`
-  height: 35px;
+  height: 38px;
   margin-top: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 13px;
 `;
 const StyledFoodList = styled(FoodList)`
-  padding-right: 50px;
+  margin-bottom: 14px;
+  padding-right: 40px;
+  padding-left: 20px;
 `;
 const DetailButton = styled.button`
-  height: 40px;
+  top: 60px;
+  right: 60px;
+  background-color: #f2ac60;
+  border-radius: 10px;
   width: 100px;
-  background: #9ce2f4;
-  color: #306eb1;
-  position: relative;
-  margin: 0 0 0 auto;
-  letter-spacing: 2px;
-  margin-top: 15px;
+  height: 50px;
   margin-bottom: 15px;
-  &::before {
-    content: "";
-    position: absolute;
-    top: calc(50% - 2px);
-    right: -2em;
-    transform: translateY(calc(-50% - 2px)) rotate(30deg);
-    width: 10px;
-    height: 2px;
-    background-color: #6bb6ff;
-    transition: 0.3s;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: -2em;
-    transform: translateY(-50%);
-    width: 60px;
-    height: 2px;
-    background-color: #6bb6ff;
-    transition: 0.3s;
-  }
-  &:hover::after,
-  &:hover:before {
-    right: -2.5em;
-  }
+  margin: 0 0 0 auto;
+  font-size: 30px;
+  color: #f7efdc;
+  font-family: fantasy;
+  font-weight: 400;
+  border: 2px solid #f2ac60;
   &:hover {
-    background: #d0f2fd;
-    color: #6bb6ff;
+    color: #f2ac60;
+    background: #f8f3e6;
+    transition-duration: 0.4s;
   }
 `;
 const StyledImage = styled.img`
@@ -177,28 +186,32 @@ const StyledImage = styled.img`
   width: 70px;
   display: flex;
   margin: 0 0 0 auto;
+  margin-top: 5px;
 `;
 const StyledEndLineImage = styled.img`
-  margin-bottom: 15px;
+  height: 10px;
+  margin-bottom: 8px;
 `;
 const ShoppingListWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   width: 100%;
   height: 100%;
+  margin-left: 30px;
+  background-size: 20px;
+  background-image: url("");
+  background-repeat: repeat-y;
 `;
-// const StyledWoodImage = styled.img`
-//   width: 500px;
-//   height: 500px;
-//   margin: 0 0 0 auto;
-// `;
+
+const StyledWoodImage = styled.img``;
+const StyledBalloonImage = styled.img`
+  height: 100px;
+`;
 const StyledShoppingList = styled(ShoppingList)`
   margin: 0 auto;
 `;
 const Footer = styled.footer`
   display: flex;
-  height: 70px;
-  background-image: url("bg_header.gif");
+  height: 13px;
+  background-image: url("header.jpg");
   background-repeat: repeat-x;
 `;

@@ -9,7 +9,7 @@ type Props = {
 export const ShoppingList = ({ className, shoppingList }: Props) => {
   return (
     <ShoppingListContainer className={className}>
-      <Title>Shopping List</Title>
+      <Title>SHOPPING LIST</Title>
       <List>
         {shoppingList.map((item, index) => (
           <Item key={index}>
@@ -17,6 +17,7 @@ export const ShoppingList = ({ className, shoppingList }: Props) => {
           </Item>
         ))}
       </List>
+      <StyledPencilImage src="pencil.png" />
     </ShoppingListContainer>
   );
 };
@@ -26,10 +27,10 @@ const ShoppingListContainer = styled.div`
   width: 350px;
   height: 600px;
   text-align: center;
-  box-shadow: 0 0px 8px #fff, 4px 4px 8px rgb(0 0 0 / 24%);
+  box-shadow: 0 0px 8px #f7f1f1, 4px 4px 8px rgb(0 0 0 / 24%);
 
   margin: 2em auto;
-  padding: 2em; /*内側余白*/
+  padding: 2.5em; /*内側余白*/
   background-color: #f7f1f1; /*背景色*/
   position: relative;
   &:after {
@@ -37,16 +38,17 @@ const ShoppingListContainer = styled.div`
     content: "";
     right: 0px;
     top: 0px;
-    border-width: 0 30px 30px 0;
+    border-width: 0 40px 40px 0;
     border-style: solid;
-    border-color: #ccc #f8edd1 #ccc;
+    border-color: #ccc #f8edd1 #e9691f;
     box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
   }
 `;
 const Title = styled.h3`
-  font-size: 24px;
-  color: #992f2f;
+  font-size: 33px;
+  color: #e9691f;
   letter-spacing: 2px;
+  font-family: fantasy;
 `;
 const List = styled.ul`
   list-style: none;
@@ -57,6 +59,13 @@ const List = styled.ul`
   text-align: left;
   box-sizing: border-box;
   letter-spacing: 1px;
+`;
+const StyledPencilImage = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 120px;
+  width: auto;
 `;
 const Item = styled.li`
   margin-bottom: 10px;
