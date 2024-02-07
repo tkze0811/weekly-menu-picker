@@ -2,13 +2,27 @@ import styled from "styled-components";
 import { FoodList } from "../components/foodList";
 import { ShoppingList } from "../components/shoppingList";
 import { WeeklyMenuTable } from "../components/weeklyMenuTable";
+import { MenuDialog } from "../components/menuDialog";
 import { useShoppingList } from "../hooks/shoppingList";
+import React, { useRef, useState } from "react";
 
 export const WeeklyMenuScreen = () => {
-  // 買うものリストに必要なものを返している
   const { shoppingList, lunchMenus, dinnerMenus, shuffleMenusToStorage } =
     useShoppingList();
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
+  const openDialog = () => {
+    console.log("openDialog");
+    console.log(dialogRef.current);
+    if (dialogRef.current) {
+      dialogRef.current.showModal();
+    }
+  };
+  const closeDialog = () => {
+    if (dialogRef.current) {
+      dialogRef.current.close();
+    }
+  };
   return (
     <AllContainer>
       <Header>
@@ -26,7 +40,9 @@ export const WeeklyMenuScreen = () => {
             <ShuffleButton onClick={shuffleMenusToStorage}>
               Shuffle
             </ShuffleButton>
-            <MenuButton>MENU</MenuButton>
+            <MenuButton onClick={openDialog}>MENU</MenuButton>
+            <MenuDialog closeDialog={closeDialog} ref={dialogRef} />
+
             <HistoryButton>
               <StyledHistoryImage src="history.png" />
             </HistoryButton>
@@ -152,7 +168,7 @@ const StyledHistoryImage = styled.img`
   height: 37px;
 `;
 const StyledLineImage = styled.img`
-  height: 38px;
+  height: 30px;
   margin-top: 20px;
   margin-bottom: 13px;
 `;
