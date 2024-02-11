@@ -46,7 +46,7 @@ export const DINNER_MENUS: Menu[] = [
     src: "omurice.png",
   },
   {
-    name: "カレー",
+    name: "カレーライス",
     ingredients: [
       {
         name: "豚肉",
@@ -68,7 +68,7 @@ export const DINNER_MENUS: Menu[] = [
     src: "curryrice.png",
   },
   {
-    name: "シチュー",
+    name: "クリームシチュー",
     ingredients: [
       {
         name: "鶏もも肉",
@@ -108,7 +108,7 @@ export const DINNER_MENUS: Menu[] = [
     src: "karaage.png",
   },
   {
-    name: "鶏のレモンソテー",
+    name: "チキンレモンソテー",
     ingredients: [
       {
         name: "鶏もも肉",
@@ -148,7 +148,7 @@ export const DINNER_MENUS: Menu[] = [
     src: "soup_vegetable.png",
   },
   {
-    name: "ドリア",
+    name: "チキンドリア",
     ingredients: [
       {
         name: "鶏もも肉",
