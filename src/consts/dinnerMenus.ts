@@ -255,4 +255,26 @@ export const DINNER_MENUS: Menu[] = [
     ],
     src: "salsa.png",
   },
+  {
+    name: "生姜焼き",
+    ingredients: [
+      {
+        name: "豚肉",
+        count: 3,
+      },
+      {
+        name: "生姜",
+        count: 1,
+      },
+      {
+        name: "にんにく",
+        count: 1,
+      },
+      {
+        name: "キャベツ",
+        count: 4,
+      },
+    ],
+    src: "syougayaki.png",
+  },
 ];
