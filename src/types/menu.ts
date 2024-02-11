@@ -7,4 +7,5 @@ export type Ingredient = {
 export type Menu = {
   name: string;
   ingredients: Ingredient[];
+  src?: string;
 };

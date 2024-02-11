@@ -168,8 +168,10 @@ const StyledHistoryImage = styled.img`
   height: 37px;
 `;
 const StyledLineImage = styled.img`
-  height: 30px;
+  height: 35px;
+  width: 900px;
   margin-top: 20px;
+  margin-left: 10px;
   margin-bottom: 13px;
 `;
 const StyledFoodList = styled(FoodList)`

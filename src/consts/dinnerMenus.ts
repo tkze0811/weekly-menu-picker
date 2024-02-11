@@ -21,6 +21,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 1,
       },
     ],
+    src: "hamburg.png",
   },
   {
     name: "オムライス",
@@ -42,6 +43,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 2,
       },
     ],
+    src: "omurice.png",
   },
   {
     name: "カレー",
@@ -63,6 +65,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 1,
       },
     ],
+    src: "curryrice.png",
   },
   {
     name: "シチュー",
@@ -88,6 +91,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 1,
       },
     ],
+    src: "cream-stew.png",
   },
   {
     name: "唐揚げ",
@@ -101,6 +105,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 3,
       },
     ],
+    src: "karaage.png",
   },
   {
     name: "鶏のレモンソテー",
@@ -114,6 +119,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 2,
       },
     ],
+    src: "chicken_sotee.png",
   },
   {
     name: "ポトフ",
@@ -139,6 +145,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 2,
       },
     ],
+    src: "soup_vegetable.png",
   },
   {
     name: "ドリア",
@@ -160,6 +167,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 2,
       },
     ],
+    src: "guratan.png",
   },
   {
     name: "タコライス",
@@ -181,6 +189,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 2,
       },
     ],
+    src: "takorice.png",
   },
   {
     name: "油淋鶏",
@@ -194,6 +203,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 1,
       },
     ],
+    src: "yurinchu.png",
   },
   {
     name: "鶏のトマト煮",
@@ -211,6 +221,7 @@ export const DINNER_MENUS: Menu[] = [
         count: 1,
       },
     ],
+    src: "chickentomato.png",
   },
   {
     name: "トンテキ",
@@ -224,9 +235,10 @@ export const DINNER_MENUS: Menu[] = [
         count: 2,
       },
     ],
+    src: "steak.png",
   },
   {
-    name: "豚ロースのトマト煮",
+    name: "ポークサルサソテー",
     ingredients: [
       {
         name: "豚ロース",
@@ -241,5 +253,6 @@ export const DINNER_MENUS: Menu[] = [
         count: 1,
       },
     ],
+    src: "salsa.png",
   },
 ];

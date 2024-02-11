@@ -18,6 +18,8 @@ export const FoodList = ({ className }: Props) => {
       <FoodItem name="ひき肉" />
       <FoodItem name="豚ロース" />
       <FoodItem name="玉ねぎ" />
+      {/* <FoodItem name="にんにく" />
+      <FoodItem name="生姜" /> */}
       <FoodItem name="じゃがいも" />
       <FoodItem name="人参" />
       <FoodItem name="トマト" />
