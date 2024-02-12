@@ -48,7 +48,7 @@ export const WeeklyMenuScreen = () => {
             </HistoryButton>
           </ButtonContainer>
 
-          <StyledLineImage src="line_vegetable.png" />
+          <StyledLineImage src="popline.png" />
           <StyledFoodList />
 
           <DetailWrapper>
@@ -61,7 +61,7 @@ export const WeeklyMenuScreen = () => {
 
         <ShoppingListWrapper>
           <StyledShoppingList shoppingList={shoppingList} />
-          <StyledBalloonImage src="" />
+          <StyledBalloonImage src="cats.png" />
           <StyledWoodImage src="" />
         </ShoppingListWrapper>
       </MainContainer>
@@ -175,11 +175,14 @@ const StyledHistoryImage = styled.img`
   height: 37px;
 `;
 const StyledLineImage = styled.img`
-  height: 35px;
+  /* height: 35px;
   width: 900px;
   margin-top: 20px;
   margin-left: 10px;
-  margin-bottom: 13px;
+  margin-bottom: 13px; */
+  height: 10px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 `;
 const StyledFoodList = styled(FoodList)`
   margin-bottom: 14px;
@@ -214,7 +217,6 @@ const DetailButton = styled.button`
 const StyledImage = styled.img`
   height: 80px;
   width: 80px;
-  margin-bottom: 15px;
 `;
 const StyledPopLineImage = styled.img`
   height: 10px;
@@ -229,11 +231,16 @@ const ShoppingListWrapper = styled.div`
   background-size: 20px;
   background-image: url("");
   background-repeat: repeat-y;
+  position: relative;
 `;
 
 const StyledWoodImage = styled.img``;
 const StyledBalloonImage = styled.img`
-  height: 100px;
+  height: 120px;
+  width: auto;
+  right: 2%;
+  bottom: 5px;
+  position: absolute;
 `;
 const StyledShoppingList = styled(ShoppingList)`
   margin: 0 auto;
