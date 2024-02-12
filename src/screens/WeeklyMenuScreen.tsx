@@ -47,12 +47,18 @@ export const WeeklyMenuScreen = () => {
               <StyledHistoryImage src="history.png" />
             </HistoryButton>
           </ButtonContainer>
+
           <StyledLineImage src="line_vegetable.png" />
           <StyledFoodList />
-          <DetailButton>Detail</DetailButton>
-          <StyledImage src="nezumi.png" />
-          <StyledEndLineImage src="popline.png" />
+
+          <DetailWrapper>
+            <DetailButton>Detail</DetailButton>
+            <StyledImage src="nezumi.png" />
+          </DetailWrapper>
+
+          <StyledPopLineImage src="popline.png" />
         </MenuContainer>
+
         <ShoppingListWrapper>
           <StyledShoppingList shoppingList={shoppingList} />
           <StyledBalloonImage src="" />
@@ -76,6 +82,7 @@ const MainContainer = styled.div`
 const MenuContainer = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 const Header = styled.header`
   letter-spacing: 5px;
@@ -179,9 +186,14 @@ const StyledFoodList = styled(FoodList)`
   padding-right: 40px;
   padding-left: 20px;
 `;
+const DetailWrapper = styled.div`
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  bottom: 15px;
+  right: 0px;
+`;
 const DetailButton = styled.button`
-  top: 60px;
-  right: 60px;
   background-color: #f2ac60;
   border-radius: 10px;
   width: 100px;
@@ -200,15 +212,14 @@ const DetailButton = styled.button`
   }
 `;
 const StyledImage = styled.img`
-  height: 70px;
-  width: 70px;
-  display: flex;
-  margin: 0 0 0 auto;
-  margin-top: 5px;
+  height: 80px;
+  width: 80px;
+  margin-bottom: 15px;
 `;
-const StyledEndLineImage = styled.img`
+const StyledPopLineImage = styled.img`
   height: 10px;
-  margin-bottom: 8px;
+  margin-top: 20px;
+  margin-bottom: 5px;
 `;
 const ShoppingListWrapper = styled.div`
   display: block;

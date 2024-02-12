@@ -68,7 +68,7 @@ export const DINNER_MENUS: Menu[] = [
     src: "curryrice.png",
   },
   {
-    name: "クリームシチュー",
+    name: "シチュー",
     ingredients: [
       {
         name: "鶏もも肉",
@@ -107,20 +107,7 @@ export const DINNER_MENUS: Menu[] = [
     ],
     src: "karaage.png",
   },
-  {
-    name: "チキンレモンソテー",
-    ingredients: [
-      {
-        name: "鶏もも肉",
-        count: 2,
-      },
-      {
-        name: "バター",
-        count: 2,
-      },
-    ],
-    src: "chicken_sotee.png",
-  },
+
   {
     name: "ポトフ",
     ingredients: [
@@ -168,6 +155,28 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "guratan.png",
+  },
+  {
+    name: "生姜焼き",
+    ingredients: [
+      {
+        name: "豚肉",
+        count: 3,
+      },
+      {
+        name: "生姜",
+        count: 1,
+      },
+      {
+        name: "にんにく",
+        count: 1,
+      },
+      {
+        name: "キャベツ",
+        count: 4,
+      },
+    ],
+    src: "syougayaki.png",
   },
   {
     name: "タコライス",
@@ -256,25 +265,17 @@ export const DINNER_MENUS: Menu[] = [
     src: "salsa.png",
   },
   {
-    name: "生姜焼き",
+    name: "チキンレモンソテー",
     ingredients: [
       {
-        name: "豚肉",
-        count: 3,
+        name: "鶏もも肉",
+        count: 2,
       },
       {
-        name: "生姜",
-        count: 1,
-      },
-      {
-        name: "にんにく",
-        count: 1,
-      },
-      {
-        name: "キャベツ",
-        count: 4,
+        name: "バター",
+        count: 2,
       },
     ],
-    src: "syougayaki.png",
+    src: "chicken_sotee.png",
   },
 ];

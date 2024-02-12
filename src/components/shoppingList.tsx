@@ -17,7 +17,7 @@ export const ShoppingList = ({ className, shoppingList }: Props) => {
           </Item>
         ))}
       </List>
-      <StyledPencilImage src="pencil.png" />
+      <StyledPencilImage src="receipt.png" />
     </ShoppingListContainer>
   );
 };
