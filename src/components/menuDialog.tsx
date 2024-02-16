@@ -13,8 +13,10 @@ export const MenuDialog = forwardRef<HTMLDialogElement, Props>(
     return (
       <Dialog ref={ref} onClick={closeDialog}>
         <MenuDialogContainer>
+          <Title>MENU</Title>
           <DialogHeader>
-            <Title>MENU</Title>
+            <CatCommentImg src="catcomment.png" />
+            <CatImg src="neko.png"></CatImg>
           </DialogHeader>
           <LunchText>LunchMenu</LunchText>
           <LunchMenus>
@@ -49,16 +51,31 @@ const Dialog = styled.dialog`
   border-radius: 40px;
   border: none;
   background-color: #45794b;
+  position: relative;
 `;
 const MenuDialogContainer = styled.div``;
-const DialogHeader = styled.div``;
+const DialogHeader = styled.div`
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  right: 5%;
+  top: 30px;
+`;
 const Title = styled.div`
-  font-size: 45px;
+  font-size: 50px;
   font-family: fantasy;
   color: #fbf1d9;
   letter-spacing: 3px;
   margin-left: 40px;
-  margin-top: 20px;
+  margin-top: 30px;
+`;
+const CatImg = styled.img`
+  height: 120px;
+  width: auto;
+`;
+const CatCommentImg = styled.img`
+  height: 100px;
+  width: auto;
 `;
 const LunchText = styled.div`
   font-size: 30px;
@@ -70,7 +87,7 @@ const LunchText = styled.div`
 `;
 const LunchMenus = styled.div`
   display: flex;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 30px;
 `;
 const LunchMenu = styled.div`
@@ -93,11 +110,11 @@ const DinnerText = styled.div`
   color: #fbf1d9;
   letter-spacing: 1px;
   margin-left: 40px;
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 const DinnerMenus = styled.div`
   display: flex;
-  padding-top: 30px;
+  padding-top: 20px;
   flex-wrap: wrap;
 `;
 const DinnerMenu = styled.div`

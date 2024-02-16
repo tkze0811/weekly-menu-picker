@@ -48,7 +48,7 @@ export const WeeklyMenuScreen = () => {
             </HistoryButton>
           </ButtonContainer>
 
-          <StyledLineImage src="popline.png" />
+          <StyledLineImage src="otiba.png" />
           <StyledFoodList />
 
           <DetailWrapper>
@@ -56,13 +56,12 @@ export const WeeklyMenuScreen = () => {
             <StyledImage src="nezumi.png" />
           </DetailWrapper>
 
-          <StyledPopLineImage src="popline.png" />
+          <StyledPopLineImage src="green_orangeline.png" />
         </MenuContainer>
 
         <ShoppingListWrapper>
           <StyledShoppingList shoppingList={shoppingList} />
-          <StyledBalloonImage src="cats.png" />
-          <StyledWoodImage src="" />
+          <StyledCatImage src="cats.png" />
         </ShoppingListWrapper>
       </MainContainer>
       <Footer />
@@ -103,8 +102,8 @@ const StyledLeftImage = styled.img`
 const Title = styled.h1`
   font-size: 45px;
   font-family: fantasy;
-  color: #992f2f;
-  border-bottom: 4px solid #992f2f;
+  color: #e9691f;
+  border-bottom: 4px solid #f9b57a;
   display: inline-block;
   padding-bottom: 5px;
 `;
@@ -117,6 +116,7 @@ const StyledWeeklyMenuTable = styled(WeeklyMenuTable)`
   margin-top: 45px;
   padding-bottom: 20px;
   text-align: center;
+  color: #8a3d17;
 `;
 const ButtonContainer = styled.div`
   margin-left: 14px;
@@ -161,7 +161,7 @@ const HistoryButton = styled.button`
   justify-content: center;
   width: 70px;
   aspect-ratio: 1;
-  background-color: #f59056;
+  background-color: #ec8347;
   border-radius: 50%;
   box-shadow: 0px 0px 8px #b1b1b1, 4px 4px 8px rgb(0 0 0 / 24%);
 
@@ -175,18 +175,12 @@ const StyledHistoryImage = styled.img`
   height: 37px;
 `;
 const StyledLineImage = styled.img`
-  /* height: 35px;
-  width: 900px;
+  height: 30px;
   margin-top: 20px;
-  margin-left: 10px;
-  margin-bottom: 13px; */
-  height: 10px;
-  margin-top: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 `;
 const StyledFoodList = styled(FoodList)`
-  margin-bottom: 14px;
-  padding-right: 40px;
+  margin-bottom: 15px;
   padding-left: 20px;
 `;
 const DetailWrapper = styled.div`
@@ -197,17 +191,16 @@ const DetailWrapper = styled.div`
   right: 0px;
 `;
 const DetailButton = styled.button`
-  background-color: #f2ac60;
+  background-color: #f59056;
   border-radius: 10px;
   width: 100px;
   height: 50px;
-  margin-bottom: 15px;
   margin: 0 0 0 auto;
   font-size: 30px;
   color: #f7efdc;
   font-family: fantasy;
   font-weight: 400;
-  border: 2px solid #f2ac60;
+  border: 2px solid #f59056;
   &:hover {
     color: #f2ac60;
     background: #f8f3e6;
@@ -219,27 +212,20 @@ const StyledImage = styled.img`
   width: 80px;
 `;
 const StyledPopLineImage = styled.img`
-  height: 10px;
-  margin-top: 20px;
-  margin-bottom: 5px;
+  height: 8px;
+  width: 850px;
 `;
 const ShoppingListWrapper = styled.div`
   display: block;
   width: 100%;
-  height: 100%;
   margin-left: 30px;
-  background-size: 20px;
-  background-image: url("");
-  background-repeat: repeat-y;
-  position: relative;
 `;
 
-const StyledWoodImage = styled.img``;
-const StyledBalloonImage = styled.img`
+const StyledCatImage = styled.img`
   height: 120px;
   width: auto;
   right: 2%;
-  bottom: 5px;
+  bottom: 6%;
   position: absolute;
 `;
 const StyledShoppingList = styled(ShoppingList)`

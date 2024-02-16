@@ -247,7 +247,7 @@ export const DINNER_MENUS: Menu[] = [
     src: "steak.png",
   },
   {
-    name: "ポークサルサソテー",
+    name: "ポークサルサ",
     ingredients: [
       {
         name: "豚ロース",
@@ -265,7 +265,7 @@ export const DINNER_MENUS: Menu[] = [
     src: "salsa.png",
   },
   {
-    name: "チキンレモンソテー",
+    name: "鶏のレモンソテー",
     ingredients: [
       {
         name: "鶏もも肉",
