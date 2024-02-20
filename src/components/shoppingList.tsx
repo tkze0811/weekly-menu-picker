@@ -43,8 +43,8 @@ const ListContent = styled.div`
   top: 27%;
 `;
 const Title = styled.h3`
-  font-size: 33px;
-  margin-left: 30px;
+  font-size: 35px;
+  margin-left: 23px;
   color: #e9691f;
   letter-spacing: 3px;
   font-family: fantasy;
@@ -52,11 +52,16 @@ const Title = styled.h3`
 const List = styled.ul`
   list-style: none;
   font-size: 18px;
-  margin-top: 10px;
-  padding: 0 20px;
-  width: 300px;
-  height: 100px;
-  text-align: left;
+  margin-top: 15px;
+  margin-left: 55px;
+  width: auto;
+  height: 290px;
+  overflow-y: scroll;
+  scrollbar-color: #fbf7f6 #e9691f;
+  scrollbar-width: thin;
+
+  ::-webkit-scrollbar-thumb {
+  }
 `;
 const StyledPencilImage = styled.img`
   height: 50px;
@@ -64,9 +69,6 @@ const StyledPencilImage = styled.img`
   margin-left: 40px;
 `;
 const Item = styled.li`
-  height: 27px;
-  width: 300px;
-  flex-wrap: wrap;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   color: #8a3d17;
 `;
