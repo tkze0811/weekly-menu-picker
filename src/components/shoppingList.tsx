@@ -57,7 +57,7 @@ const List = styled.ul`
   width: auto;
   height: 290px;
   overflow-y: scroll;
-  scrollbar-color: #fbf7f6 #e9691f;
+  scrollbar-color: #f9f5f3 #e9691f;
   scrollbar-width: thin;
 
   ::-webkit-scrollbar-thumb {

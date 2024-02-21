@@ -12,8 +12,6 @@ export const WeeklyMenuScreen = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const openDialog = () => {
-    console.log("openDialog");
-    console.log(dialogRef.current);
     if (dialogRef.current) {
       dialogRef.current.showModal();
     }

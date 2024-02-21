@@ -1,7 +1,9 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useRef, useState } from "react";
 import styled from "styled-components";
 import { LUNCH_MENUS } from "../consts/lunchMenus";
 import { DINNER_MENUS } from "../consts/dinnerMenus";
+import { LunchMenuDialog } from "../components/LunchmenuDialog";
+import { DinnerMenuDialog } from "../components/dinnermenuDialog";
 
 type Props = {
   ref: HTMLDialogElement;
@@ -10,9 +12,39 @@ type Props = {
 
 export const MenuDialog = forwardRef<HTMLDialogElement, Props>(
   ({ closeDialog }, ref) => {
+    const dialogRef = useRef<HTMLDialogElement>(null);
+
+    const openLunchMenuDialog = () => {
+      console.log("lunch openDialog");
+      console.log(dialogRef.current);
+      if (dialogRef.current) {
+        dialogRef.current.showModal();
+      }
+    };
+    const openDinnerMenuDialog = () => {
+      console.log("dinner openDialog");
+      console.log(dialogRef.current);
+      if (dialogRef.current) {
+        dialogRef.current.showModal();
+      }
+    };
+    const closeLunchMenuDialog = () => {
+      console.log("lunch closeDialog");
+      console.log(dialogRef.current);
+      if (dialogRef.current) {
+        dialogRef.current.close();
+      }
+    };
+    const closeDinnerMenuDialog = () => {
+      console.log("dinner closeDialog");
+      console.log(dialogRef.current);
+      if (dialogRef.current) {
+        dialogRef.current.close();
+      }
+    };
     return (
       <Dialog ref={ref} onClick={closeDialog}>
-        <MenuDialogContainer>
+        <MenuDialogContainer onClick={(e) => e.stopPropagation()}>
           <Title>MENU</Title>
           <DialogHeader>
             <CatCommentImg src="catcomment.png" />
@@ -21,19 +53,31 @@ export const MenuDialog = forwardRef<HTMLDialogElement, Props>(
           <LunchText>LunchMenu</LunchText>
           <LunchMenus>
             {LUNCH_MENUS.map((menu) => (
-              <LunchMenu>
-                <LunchImg src={menu.src} />
-                <LunchMenuName>{menu.name}</LunchMenuName>
-              </LunchMenu>
+              <>
+                <LunchMenu onClick={openLunchMenuDialog}>
+                  <LunchImg src={menu.src} />
+                  <LunchMenuName>{menu.name}</LunchMenuName>
+                </LunchMenu>
+                <LunchMenuDialog
+                  closeDialog={closeLunchMenuDialog}
+                  ref={dialogRef}
+                />
+              </>
             ))}
           </LunchMenus>
           <DinnerText>DinnerMenu</DinnerText>
           <DinnerMenus>
             {DINNER_MENUS.map((menu) => (
-              <DinnerMenu>
-                <DinnerImg src={menu.src} />
-                <DinnerMenuName>{menu.name}</DinnerMenuName>
-              </DinnerMenu>
+              <>
+                <DinnerMenu onClick={openDinnerMenuDialog}>
+                  <DinnerImg src={menu.src} />
+                  <DinnerMenuName>{menu.name}</DinnerMenuName>
+                </DinnerMenu>
+                <DinnerMenuDialog
+                  closeDialog={closeDinnerMenuDialog}
+                  ref={dialogRef}
+                />
+              </>
             ))}
           </DinnerMenus>
         </MenuDialogContainer>
