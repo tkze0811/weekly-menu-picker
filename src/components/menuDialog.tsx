@@ -1,9 +1,7 @@
-import React, { forwardRef, useRef, useState } from "react";
+import React, { forwardRef, useRef } from "react";
 import styled from "styled-components";
 import { LUNCH_MENUS } from "../consts/lunchMenus";
 import { DINNER_MENUS } from "../consts/dinnerMenus";
-import { LunchMenuDialog } from "../components/LunchmenuDialog";
-import { DinnerMenuDialog } from "../components/dinnermenuDialog";
 
 type Props = {
   ref: HTMLDialogElement;
@@ -14,34 +12,6 @@ export const MenuDialog = forwardRef<HTMLDialogElement, Props>(
   ({ closeDialog }, ref) => {
     const dialogRef = useRef<HTMLDialogElement>(null);
 
-    const openLunchMenuDialog = () => {
-      console.log("lunch openDialog");
-      console.log(dialogRef.current);
-      if (dialogRef.current) {
-        dialogRef.current.showModal();
-      }
-    };
-    const openDinnerMenuDialog = () => {
-      console.log("dinner openDialog");
-      console.log(dialogRef.current);
-      if (dialogRef.current) {
-        dialogRef.current.showModal();
-      }
-    };
-    const closeLunchMenuDialog = () => {
-      console.log("lunch closeDialog");
-      console.log(dialogRef.current);
-      if (dialogRef.current) {
-        dialogRef.current.close();
-      }
-    };
-    const closeDinnerMenuDialog = () => {
-      console.log("dinner closeDialog");
-      console.log(dialogRef.current);
-      if (dialogRef.current) {
-        dialogRef.current.close();
-      }
-    };
     return (
       <Dialog ref={ref} onClick={closeDialog}>
         <MenuDialogContainer onClick={(e) => e.stopPropagation()}>
@@ -54,14 +24,10 @@ export const MenuDialog = forwardRef<HTMLDialogElement, Props>(
           <LunchMenus>
             {LUNCH_MENUS.map((menu) => (
               <>
-                <LunchMenu onClick={openLunchMenuDialog}>
+                <LunchMenu href={menu.url} target="_blank">
                   <LunchImg src={menu.src} />
                   <LunchMenuName>{menu.name}</LunchMenuName>
                 </LunchMenu>
-                <LunchMenuDialog
-                  closeDialog={closeLunchMenuDialog}
-                  ref={dialogRef}
-                />
               </>
             ))}
           </LunchMenus>
@@ -69,14 +35,10 @@ export const MenuDialog = forwardRef<HTMLDialogElement, Props>(
           <DinnerMenus>
             {DINNER_MENUS.map((menu) => (
               <>
-                <DinnerMenu onClick={openDinnerMenuDialog}>
+                <DinnerMenu href={menu.url} target="_blank">
                   <DinnerImg src={menu.src} />
                   <DinnerMenuName>{menu.name}</DinnerMenuName>
                 </DinnerMenu>
-                <DinnerMenuDialog
-                  closeDialog={closeDinnerMenuDialog}
-                  ref={dialogRef}
-                />
               </>
             ))}
           </DinnerMenus>
@@ -88,14 +50,12 @@ export const MenuDialog = forwardRef<HTMLDialogElement, Props>(
 
 const Dialog = styled.dialog`
   z-index: 1;
-  position: absolute;
   margin: auto;
   width: 1000px;
   height: 700px;
   border-radius: 40px;
   border: none;
   background-color: #45794b;
-  position: relative;
 `;
 const MenuDialogContainer = styled.div``;
 const DialogHeader = styled.div`
@@ -134,10 +94,11 @@ const LunchMenus = styled.div`
   padding-top: 20px;
   padding-bottom: 30px;
 `;
-const LunchMenu = styled.div`
+const LunchMenu = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
 `;
 const LunchMenuName = styled.div`
   padding-left: 40px;
@@ -161,10 +122,11 @@ const DinnerMenus = styled.div`
   padding-top: 20px;
   flex-wrap: wrap;
 `;
-const DinnerMenu = styled.div`
+const DinnerMenu = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
 `;
 const DinnerMenuName = styled.div`
   padding-left: 40px;

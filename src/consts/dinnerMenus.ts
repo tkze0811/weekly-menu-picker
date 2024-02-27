@@ -22,6 +22,7 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "hamburg.png",
+    url: "https://cookpad.com/recipe/2265297",
   },
   {
     name: "オムライス",
@@ -44,6 +45,7 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "omurice.png",
+    url: "https://cookpad.com/recipe/2221374",
   },
   {
     name: "カレーライス",
@@ -54,7 +56,7 @@ export const DINNER_MENUS: Menu[] = [
       },
       {
         name: "じゃがいも",
-        count: 3,
+        count: 1,
       },
       {
         name: "人参",
@@ -66,6 +68,7 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "curryrice.png",
+    url: "https://delishkitchen.tv/recipes/199057563545764991",
   },
   {
     name: "シチュー",
@@ -76,7 +79,7 @@ export const DINNER_MENUS: Menu[] = [
       },
       {
         name: "じゃがいも",
-        count: 3,
+        count: 1,
       },
       {
         name: "人参",
@@ -92,6 +95,7 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "cream-stew.png",
+    url: "https://housefoods.jp/recipe/rcp_00014505.html",
   },
   {
     name: "唐揚げ",
@@ -106,6 +110,7 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "karaage.png",
+    url: "https://youtu.be/joWqjVNoIZc?si=jjCJXEz10ATMRKb6",
   },
 
   {
@@ -117,7 +122,7 @@ export const DINNER_MENUS: Menu[] = [
       },
       {
         name: "じゃがいも",
-        count: 3,
+        count: 2,
       },
       {
         name: "人参",
@@ -133,6 +138,7 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "soup_vegetable.png",
+    url: "https://cookpad.com/recipe/313406",
   },
   {
     name: "チキンドリア",
@@ -151,17 +157,18 @@ export const DINNER_MENUS: Menu[] = [
       },
       {
         name: "牛乳",
-        count: 2,
+        count: 4,
       },
     ],
     src: "guratan.png",
+    url: "https://cookpad.com/recipe/4241224",
   },
   {
     name: "生姜焼き",
     ingredients: [
       {
         name: "豚肉",
-        count: 3,
+        count: 2,
       },
       {
         name: "生姜",
@@ -177,13 +184,14 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "syougayaki.png",
+    url: "https://www.orangepage.net/ymsr/features/golden-ratio/posts/2764",
   },
   {
     name: "タコライス",
     ingredients: [
       {
         name: "ひき肉",
-        count: 1,
+        count: 2,
       },
       {
         name: "玉ねぎ",
@@ -197,8 +205,13 @@ export const DINNER_MENUS: Menu[] = [
         name: "キャベツ",
         count: 2,
       },
+      {
+        name: "トマト",
+        count: 1,
+      },
     ],
     src: "takorice.png",
+    url: "https://cookpad.com/recipe/1467554",
   },
   {
     name: "油淋鶏",
@@ -213,6 +226,7 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "yurinchu.png",
+    url: "https://www.youtube.com/watch?v=EFq4SobyDrg",
   },
   {
     name: "鶏のトマト煮",
@@ -231,6 +245,7 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "chickentomato.png",
+    url: "https://delishkitchen.tv/recipes/201947598955741542",
   },
   {
     name: "トンテキ",
@@ -243,11 +258,16 @@ export const DINNER_MENUS: Menu[] = [
         name: "バター",
         count: 2,
       },
+      {
+        name: "にんにく",
+        count: 2,
+      },
     ],
     src: "steak.png",
+    url: "https://oceans-nadia.com/user/320681/recipe/396735",
   },
   {
-    name: "ポークサルサ",
+    name: "ポークトマト",
     ingredients: [
       {
         name: "豚ロース",
@@ -263,19 +283,21 @@ export const DINNER_MENUS: Menu[] = [
       },
     ],
     src: "salsa.png",
+    url: "https://oceans-nadia.com/user/320681/recipe/396735",
   },
   {
     name: "鶏のレモンソテー",
     ingredients: [
       {
         name: "鶏もも肉",
-        count: 2,
+        count: 3,
       },
       {
         name: "バター",
-        count: 2,
+        count: 3,
       },
     ],
     src: "chicken_sotee.png",
+    url: "https://delishkitchen.tv/recipes/190081697251852692",
   },
 ];
