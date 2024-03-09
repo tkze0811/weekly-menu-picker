@@ -5,6 +5,7 @@ import { WeeklyMenuTable } from "../components/weeklyMenuTable";
 import { MenuDialog } from "../components/menuDialog";
 import { useShoppingList } from "../hooks/shoppingList";
 import React, { useRef, useState } from "react";
+import { Loading } from "../components/loading";
 
 export const WeeklyMenuScreen = () => {
   const { shoppingList, lunchMenus, dinnerMenus, shuffleMenusToStorage } =
@@ -23,6 +24,7 @@ export const WeeklyMenuScreen = () => {
   };
   return (
     <AllContainer>
+      <Loading />
       <Header>
         <StyledLeftImage src="star.png" />
         <Title>WEEKLY MENU</Title>
