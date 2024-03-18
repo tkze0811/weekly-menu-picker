@@ -33,7 +33,7 @@ to{
 }
 `;
 const LoadingContainer = styled.div`
-  /* animation: ${fadeIn} 0.5s 3s ease-in-out forwards; */
+  animation: ${fadeIn} 0.5s 3s ease-in-out forwards;
   z-index: 100;
   top: 0;
   left: 0;
@@ -43,7 +43,7 @@ const LoadingContainer = styled.div`
   position: absolute;
 `;
 const LoadingImg = styled.img`
-  animation: 3s linear infinite ${slidein};
+  animation: 3.5s linear infinite ${slidein};
   height: 150px;
   width: 230px;
   position: absolute;
@@ -57,5 +57,5 @@ const LoadingText = styled.div`
   letter-spacing: 0.1em;
   position: absolute;
   top: 59%;
-  left: 46%;
+  left: 45%;
 `;
