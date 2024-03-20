@@ -42,19 +42,12 @@ export const WeeklyMenuScreen = () => {
             </ShuffleButton>
             <MenuButton onClick={openDialog}>MENU</MenuButton>
             <MenuDialog closeDialog={closeDialog} ref={dialogRef} />
-
-            <HistoryButton>
-              <StyledHistoryImage src="history.png" />
-            </HistoryButton>
           </ButtonContainer>
 
           <StyledLineImage src="otiba.png" />
           <StyledFoodList />
 
-          <DetailWrapper>
-            <DetailButton>Detail</DetailButton>
-            <StyledImage src="nezumi.png" />
-          </DetailWrapper>
+          <StyledImage src="nezumi.png" />
 
           <StyledPopLineImage src="green_orangeline.png" />
         </MenuContainer>
@@ -86,7 +79,7 @@ const MenuContainer = styled.div`
 const Header = styled.header`
   letter-spacing: 5px;
   display: flex;
-  padding-top: 50px;
+  padding-top: 60px;
   padding-left: 22px;
   height: 70px;
   gap: 45px;
@@ -94,13 +87,14 @@ const Header = styled.header`
   background-repeat: repeat-x;
   align-items: center;
 `;
+
 const StyledLeftImage = styled.img`
   margin-top: 50px;
   height: 150px;
   width: 300px;
 `;
 const Title = styled.h1`
-  font-size: 45px;
+  font-size: 50px;
   font-family: fantasy;
   color: #e9691f;
   border-bottom: 4px solid #f9b57a;
@@ -113,22 +107,22 @@ const StyledRightImage = styled.img`
   width: 300px;
 `;
 const StyledWeeklyMenuTable = styled(WeeklyMenuTable)`
-  margin-top: 45px;
-  padding-bottom: 20px;
+  margin-top: 55px;
+  padding-bottom: 15px;
   text-align: center;
   color: #8a3d17;
 `;
 const ButtonContainer = styled.div`
-  margin-left: 14px;
+  margin-left: 30px;
   display: flex;
-  gap: 24px;
+  gap: 30px;
   margin-top: 5px;
 `;
 const ShuffleButton = styled.button`
-  width: 70px;
+  width: 75px;
   aspect-ratio: 1;
   font-family: fantasy;
-  background-color: #3c5b98;
+  background-color: #e9691f;
   color: #f7efdc;
   font-size: 18px;
   border-radius: 50%;
@@ -140,7 +134,7 @@ const ShuffleButton = styled.button`
   }
 `;
 const MenuButton = styled.button`
-  width: 70px;
+  width: 75px;
   aspect-ratio: 1;
   font-family: fantasy;
   background-color: #588f5e;
@@ -154,66 +148,25 @@ const MenuButton = styled.button`
     transform: translate(3px, 3px);
   }
 `;
-
-const HistoryButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  aspect-ratio: 1;
-  background-color: #ec8347;
-  border-radius: 50%;
-  box-shadow: 0px 0px 8px #b1b1b1, 4px 4px 8px rgb(0 0 0 / 24%);
-
-  &:hover {
-    box-shadow: none;
-    transform: translate(3px, 3px);
-  }
-`;
-const StyledHistoryImage = styled.img`
-  width: 40px;
-  height: 37px;
-`;
 const StyledLineImage = styled.img`
   height: 30px;
   margin-top: 20px;
   margin-bottom: 15px;
 `;
 const StyledFoodList = styled(FoodList)`
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   padding-left: 20px;
 `;
-const DetailWrapper = styled.div`
-  position: absolute;
-  display: flex;
-  gap: 20px;
-  bottom: 15px;
-  right: 0px;
-`;
-const DetailButton = styled.button`
-  background-color: #f59056;
-  border-radius: 10px;
-  width: 100px;
-  height: 50px;
-  margin: 0 0 0 auto;
-  font-size: 30px;
-  color: #f7efdc;
-  font-family: fantasy;
-  font-weight: 400;
-  border: 2px solid #f59056;
-  &:hover {
-    color: #f2ac60;
-    background: #f8f3e6;
-    transition-duration: 0.4s;
-  }
-`;
 const StyledImage = styled.img`
+  position: absolute;
+  right: 60px;
+  bottom: 15px;
   height: 80px;
   width: 80px;
 `;
 const StyledPopLineImage = styled.img`
-  height: 8px;
-  width: 850px;
+  height: 10px;
+  width: 950px;
 `;
 const ShoppingListWrapper = styled.div`
   display: block;
@@ -234,6 +187,7 @@ const StyledShoppingList = styled(ShoppingList)`
 const Footer = styled.footer`
   display: flex;
   height: 13px;
+  margin-top: 23px;
   background-image: url("header.jpg");
   background-repeat: repeat-x;
 `;

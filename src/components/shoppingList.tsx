@@ -20,7 +20,7 @@ export const ShoppingList = ({ className, shoppingList }: Props) => {
           ))}
         </List>
       </ListContent>
-      <StyledPencilImage src="catswalk.png" />
+      <StyledCatwalkImage src="catswalk.png" />
     </ShoppingListContainer>
   );
 };
@@ -32,7 +32,7 @@ const ShoppingListImg = styled.img`
   height: 600px;
   width: 420px;
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 10%;
   position: relative;
 `;
@@ -52,7 +52,7 @@ const Title = styled.h3`
 const List = styled.ul`
   list-style: none;
   font-size: 18px;
-  margin-top: 15px;
+  margin-top: 14px;
   margin-left: 55px;
   width: auto;
   height: 290px;
@@ -63,10 +63,11 @@ const List = styled.ul`
   ::-webkit-scrollbar-thumb {
   }
 `;
-const StyledPencilImage = styled.img`
+const StyledCatwalkImage = styled.img`
   height: 50px;
   width: 400px;
   margin-left: 40px;
+  margin-top: 10px;
 `;
 const Item = styled.li`
   letter-spacing: 4px;
