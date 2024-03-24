@@ -46,7 +46,6 @@ export const WeeklyMenuScreen = () => {
 
           <StyledLineImage src="otiba.png" />
           <StyledFoodList />
-
           <StyledImage src="nezumi.png" />
 
           <StyledPopLineImage src="green_orangeline.png" />
